@@ -1,14 +1,14 @@
+import 'dotenv/config.js'
 import express from 'express'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import logger from 'morgan'
 import methodOverride from 'method-override'
 import cors from 'cors'
+import('./config/database.js')
 
 const app = express();
 
-import ('dotenv/config.js')
-import('./config/database.js')
 
 import { router as usersRouter } from './routes/users.js'
 import { router as authRouter } from './routes/auth.js'
