@@ -16,10 +16,10 @@ class App extends Component {
           <Landing user={this.state.user} />
         </Route>
 				<Route exact path='/signup'>
-          <Signup />
+          <Signup history={this.props.history}/>
         </Route>
 				<Route exact path='/login'>
-          <Login />
+          <Login history={this.props.history}/>
         </Route>
 			</>
 		)

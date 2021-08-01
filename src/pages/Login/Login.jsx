@@ -7,7 +7,7 @@ class LoginPage extends Component {
     return (
       <main className={styles.container}>
         <h1>Log In</h1>
-        <LoginForm />
+        <LoginForm history={this.props.history}/>
       </main>
     )
   }
