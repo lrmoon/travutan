@@ -1,23 +1,23 @@
-const BASE_URL = '/api/auth/';
+const BASE_URL = '/api/auth'
 
 function signup(user) {
-  return fetch(BASE_URL + 'signup', {
+  return fetch(`${BASE_URL}/signup`, {
     method: 'POST',
-    headers: new Headers({'Content-Type': 'application/json'}),
-    body: JSON.stringify(user)
+    headers: new Headers({ 'Content-Type': 'application/json' }),
+    body: JSON.stringify(user),
   })
   .then(res => {
-    console.log(res, '<-- response object')
-    return res.json();
+    return res.json()
   })
   .then(json => {
-    if(json.token) return json;
-    console.log(json, '<-- the error')
-    throw new Error(`${json.err}`)
+    if (json.token) return json.token
+    throw new Error(json.err)
   })
-  .then(data => data)
+  .catch(err => {
+    console.log(err)
+  })
 }
 
-export default {
-  signup
-};
+export {
+  signup,
+}

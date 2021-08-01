@@ -5,15 +5,9 @@ export {
   router
 }
 
-const router = Router();
+const router = Router()
 
 /*---------- Public Routes ----------*/
-router.post('/signup', authCtrl.signup);
-
-
+router.post('/signup', authCtrl.signup)
 
 /*---------- Protected Routes ----------*/
-
-
-
-
