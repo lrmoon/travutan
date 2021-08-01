@@ -47,8 +47,8 @@ class LoginForm extends Component {
           />
         </div>
         <div>
-          <button className="btn green" className={styles.button}>Log In</button>
-          <Link className="btn red" to="/">
+          <button className={styles.button}>Log In</button>
+          <Link to="/">
             <button>Cancel</button>
           </Link>
         </div>
