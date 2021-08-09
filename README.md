@@ -9,7 +9,7 @@ Use this to go build things! 🚀
 __Replace `<name-of-your-app-here>` in the commands below with the name of your app!__
 
 ```bash
-git clone https://github.com/SEI-Remote/mern-stack-jwt-auth-template <name-of-your-app-here>
+git clone https://github.com/SEI-Remote-WC/mern-jwt-auth-template-no-hooks <name-of-your-app-here>
 cd <name-of-your-app-here>
 ```
 
