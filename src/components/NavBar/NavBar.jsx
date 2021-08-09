@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const NavBar = ({ user, handleLogout }) => {
 	return (
@@ -10,7 +10,7 @@ const NavBar = ({ user, handleLogout }) => {
 						<ul>
 							<li>Welcome, {user.name}</li>
 							{/* <li>
-                <NavLink to="/users">Users</NavLink>
+                <Link to="/users">Users</Link>
               </li> */}
 						</ul>
 					</div>
@@ -20,13 +20,13 @@ const NavBar = ({ user, handleLogout }) => {
 					<div>
 						<ul>
 							<li>
-								<NavLink to="/login">Log In</NavLink>
+								<Link to="/login">Log In</Link>
 							</li>
 							{/* <li>
-                <NavLink to="/users">Users</NavLink>
+                <Link to="/users">Users</Link>
               </li> */}
 							<li>
-								<NavLink to="/signup">Sign Up</NavLink>
+								<Link to="/signup">Sign Up</Link>
 							</li>
 						</ul>
 					</div>

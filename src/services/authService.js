@@ -1,4 +1,4 @@
-const BASE_URL = '/api/auth'
+const BASE_URL = '/api/auth/'
 
 function signup(user) {
   return fetch(`${BASE_URL}/signup`, {

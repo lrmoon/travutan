@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import styles from './SignupForm.module.css'
-import { signup } from '../../services/authService'
+import * as authService from '../../services/authService'
 
 class SignupForm extends Component {
   state = {
@@ -22,7 +22,7 @@ class SignupForm extends Component {
     const { history, updateMessage } = this.props
     e.preventDefault()
     try {
-      await signup(this.state)
+      await authService.signup(this.state)
       history.push('/')
     } catch (err) {
       updateMessage(err.message)
