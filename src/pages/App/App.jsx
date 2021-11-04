@@ -5,6 +5,7 @@ import Signup from '../Signup/Signup'
 import Login from '../Login/Login'
 import Landing from '../Landing/Landing'
 import * as authService from '../../services/authService'
+import Users from '../Users/Users';
 
 class App extends Component {
 	state = {
@@ -42,6 +43,9 @@ class App extends Component {
 						history={this.props.history}
 						handleSignupOrLogin={this.handleSignupOrLogin}
 					/>
+				</Route>
+				<Route exact path='/users'>
+					<Users />
 				</Route>
 			</>
 		)
