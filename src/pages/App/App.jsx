@@ -17,6 +17,10 @@ class App extends Component {
 		this.props.history.push('/')
 	}
 
+	handleSignup = () => {
+		
+	}
+
 	render() {
 		return (
 			<>
