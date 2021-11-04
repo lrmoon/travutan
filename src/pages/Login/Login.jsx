@@ -9,7 +9,7 @@ class LoginPage extends Component {
       <main className={styles.container}>
         <h1>Log In</h1>
         <LoginForm 
-          handleSignupOrLogin={this.handleSignupOrLogin}
+          handleSignupOrLogin={this.props.handleSignupOrLogin}
           history={this.props.history}/>
       </main>
     )
