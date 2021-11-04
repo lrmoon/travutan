@@ -18,7 +18,7 @@ class App extends Component {
 	}
 
 	handleSignup = () => {
-		
+		this.setState({ user: authService.getUser() })
 	}
 
 	render() {
@@ -29,14 +29,17 @@ class App extends Component {
 					handleLogout={this.handleLogout} 
 				/>
 				<Route exact path='/'>
-          <Landing user={this.state.user} />
-        </Route>
+          			<Landing user={this.state.user} />
+        		</Route>
 				<Route exact path='/signup'>
-          <Signup history={this.props.history}/>
-        </Route>
+					<Signup 
+						history={this.props.history}
+						handleSignup={this.handleSignup}
+					/>
+				</Route>
 				<Route exact path='/login'>
-          <Login history={this.props.history}/>
-        </Route>
+					<Login history={this.props.history}/>
+				</Route>
 			</>
 		)
 	}
