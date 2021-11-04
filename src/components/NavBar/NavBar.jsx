@@ -12,6 +12,9 @@ const NavBar = ({ user, handleLogout }) => {
 							{/* <li>
                 <Link to="/users">Users</Link>
               </li> */}
+			  				<li>
+								  <Link to='' onClick={handleLogout}>Log Out</Link>
+							  </li>	
 						</ul>
 					</div>
 				</nav>

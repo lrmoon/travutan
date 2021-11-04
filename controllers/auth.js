@@ -1,9 +1,7 @@
 import { User } from '../models/user.js'
 import { Profile } from '../models/profile.js'
+import jwt from 'jsonwebtoken'
 
-export {
-  signup
-}
 
 async function signup(req, res) {
   const profile = new Profile(req.body)
@@ -12,11 +10,19 @@ async function signup(req, res) {
   try {
     await user.save();
     await profile.save();
-
-    // TODO: Send back a JWT instead of the user
-    res.status(200).json(user)
-  
+    
+    const token = createJWT(user);
+    res.json({token})
+    
   } catch (err) {
     res.status(400).send({ err: err.errmsg })
   }
+}
+
+function createJWT(user) {
+  return jwt.sign({user}, process.env.SECRET, { expiresIn: "24h" })
+}
+
+export {
+  signup
 }

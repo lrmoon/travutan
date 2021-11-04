@@ -1,4 +1,6 @@
+import * as tokenService from './tokenService'
 const BASE_URL = '/api/auth/'
+
 
 function signup(user) {
   return fetch(`${BASE_URL}/signup`, {
@@ -13,11 +15,24 @@ function signup(user) {
     if (json.token) return json.token
     throw new Error(json.err)
   })
+  .then(token => {
+    tokenService.setToken(token);
+  })
   .catch(err => {
     console.log(err)
   })
 }
 
+function getUser() {
+  return tokenService.getUserFromToken()
+}
+
+function logout() {
+  tokenService.removeToken()
+}
+
 export {
   signup,
+  getUser,
+  logout
 }
