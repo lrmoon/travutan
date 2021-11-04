@@ -17,7 +17,7 @@ class App extends Component {
 		this.props.history.push('/')
 	}
 
-	handleSignup = () => {
+	handleSignupOrLogin = () => {
 		this.setState({ user: authService.getUser() })
 	}
 
@@ -34,11 +34,14 @@ class App extends Component {
 				<Route exact path='/signup'>
 					<Signup 
 						history={this.props.history}
-						handleSignup={this.handleSignup}
+						handleSignupOrLogin={this.handleSignupOrLogin}
 					/>
 				</Route>
 				<Route exact path='/login'>
-					<Login history={this.props.history}/>
+					<Login 
+						history={this.props.history}
+						handleSignupOrLogin={this.handleSignupOrLogin}
+					/>
 				</Route>
 			</>
 		)
