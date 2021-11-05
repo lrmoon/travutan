@@ -1,6 +1,7 @@
 import { Router } from 'express'
 import * as authCtrl from '../controllers/auth.js'
 
+
 export {
   router
 }

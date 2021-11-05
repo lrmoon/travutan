@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route } from 'react-router-dom'
+import { Route, Redirect} from 'react-router-dom'
 import NavBar from '../../components/NavBar/NavBar'
 import Signup from '../Signup/Signup'
 import Login from '../Login/Login'
@@ -23,14 +23,15 @@ class App extends Component {
 	}
 
 	render() {
+		const {user} = this.state
 		return (
 			<>
 				<NavBar 
-					user={this.state.user} 
+					user={user} 
 					handleLogout={this.handleLogout} 
 				/>
 				<Route exact path='/'>
-          			<Landing user={this.state.user} />
+          			<Landing user={user} />
         		</Route>
 				<Route exact path='/signup'>
 					<Signup 
@@ -44,9 +45,13 @@ class App extends Component {
 						handleSignupOrLogin={this.handleSignupOrLogin}
 					/>
 				</Route>
-				<Route exact path='/users'>
-					<Users />
-				</Route>
+				<Route
+					exact
+					path="/users"
+					render={() =>
+						user ? <Users /> : <Redirect to="/login" />
+  					}
+/>
 			</>
 		)
 	}
