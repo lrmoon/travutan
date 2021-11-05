@@ -1,5 +1,5 @@
 import * as tokenService from "../services/tokenService";
-const BASE_URL = 'http://localhost:3001/api/users/';
+const BASE_URL = '/api/users/';
 
 export function getAllUsers() {
     return fetch(
