@@ -9,5 +9,6 @@ export function getAllUsers() {
       },
       { mode: "cors" }
     ).then((res) => res.json())
+    
   }
 
