@@ -6,6 +6,7 @@ import Login from '../Login/Login'
 import SearchList from '../SearchList/SearchList'
 import Landing from '../Landing/Landing'
 import * as authService from '../../services/authService'
+import * as roadgoatService from './../../services/roadgoatService'
 import Users from '../Users/Users';
 
 class App extends Component {
@@ -40,13 +41,8 @@ class App extends Component {
 			searchURL: this.state.baseURL + this.state.query + this.state.searchTitle, 
 			searchTitle: ''
 		}, () => {
-			fetch(this.state.searchURL, {
-				headers: new Headers({
-				"Authorization": `Basic ${btoa(`${this.state.loginAPI}:${this.state.passAPI}`)}`
-				})
-			})
-			.then(res => res.json())
-			.then(json => console.log(json))  
+			roadgoatService.getSearch(this.state.searchURL, this.state.loginAPI, this.state.passAPI)
+			.then(json => console.log(json))
 		})
 	}
 
