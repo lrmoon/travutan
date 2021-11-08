@@ -15,7 +15,7 @@ class App extends Component {
 		baseURL: process.env.REACT_APP_BASEURL,
 		query: "q=",
 		searchTitle: "",
-		endpoint:""
+		searchURL: ""
 	}
 
 	handleLogout = () => {
@@ -29,11 +29,18 @@ class App extends Component {
 	}
 	
 	handleChange = (e) => {
-		this.setState({value: e.target.value})
+		this.setState({searchTitle: e.target.value})
+		console.log(this.state.searchTitle)
 	}
 
 	handleSubmit = (e) => {
+		console.log("stuff")
 		e.preventDefault()
+		this.setState({
+			searchURL: this.state.baseURL + this.state.query + this.state.searchTitle, 
+			
+		})
+		console.log(this.state.searchURL)
 	}
 
 	render() {
@@ -43,7 +50,8 @@ class App extends Component {
 				<NavBar 
 					user={user} 
 					handleLogout={this.handleLogout}
-					handleChange={this.handleChange} 
+					handleChange={this.handleChange}
+					handleSubmit={this.handleSubmit} 
 				/>
 				<Route exact path='/'>
           			<Landing user={user} />

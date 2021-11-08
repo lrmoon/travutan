@@ -45,7 +45,7 @@ const NavBar = ({ user, handleLogout, handleChange, handleSubmit }) => {
 							<li>
 								<form onSubmit={handleSubmit}>
 									<input onChange={handleChange} type='text' placeholder='Search for destination'></input>
-									<input type='submit' value="Submit"></input>
+									<button type='submit' value="Submit" >Search</button>
 								</form>
 							</li>
 
