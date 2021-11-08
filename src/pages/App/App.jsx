@@ -42,7 +42,9 @@ class App extends Component {
 			searchTitle: ''
 		}, () => {
 			roadgoatService.getSearch(this.state.searchURL, this.state.loginAPI, this.state.passAPI)
-			.then(json => console.log(json))
+			.then(json => this.setState({
+				data: json
+			}))
 		})
 	}
 
@@ -82,7 +84,11 @@ class App extends Component {
   					}
 				/>
 
-				{/* <SearchList search={this.state.searchURL}/> */}
+				<Route exact path='/search'>
+					<SearchList search={this.state.searchURL}/>	
+				</Route>
+				
+
 			</>
 		)
 	}
