@@ -48,4 +48,14 @@ You also have the ability to see all users that are signed into the app, friend 
 
 
 
-## Planned for future anchancements
+## Planned for future enhancements
+
+AAU have a profile page where my Favorite place are shown. be able to unfavorite on my profile.
+
+AAU I want to see when a review was made.
+
+AAU I want to see how many reviews I have made.
+
+AAU I want to see my profile with my reviews.
+
+AAU I want to be able to update a travel destination review.
