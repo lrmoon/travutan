@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styles from './NavBar.module.css'
 
-const NavBar = ({ user, handleLogout, handleChange }) => {
+const NavBar = ({ user, handleLogout, handleChange, handleSubmit }) => {
 	
 	return (
 		<>
@@ -43,7 +43,7 @@ const NavBar = ({ user, handleLogout, handleChange }) => {
 							    <Link to='/destinations'>Destinations</Link>
 							</li>
 							<li>
-								<form>
+								<form onSubmit={handleSubmit}>
 									<input onChange={handleChange} type='text' placeholder='Search for destination'></input>
 									<input type='submit' value="Submit"></input>
 								</form>

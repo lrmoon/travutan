@@ -32,6 +32,10 @@ class App extends Component {
 		this.setState({value: e.target.value})
 	}
 
+	handleSubmit = (e) => {
+		e.preventDefault()
+	}
+
 	render() {
 		const {user} = this.state
 		return (
