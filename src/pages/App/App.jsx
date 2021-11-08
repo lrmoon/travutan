@@ -5,6 +5,7 @@ import Signup from '../Signup/Signup'
 import Login from '../Login/Login'
 import Landing from '../Landing/Landing'
 import * as authService from '../../services/authService'
+import * as roadgoatService from './../../services/roadgoatService'
 import Users from '../Users/Users';
 
 class App extends Component {
@@ -41,6 +42,8 @@ class App extends Component {
 			
 		})
 		console.log(this.state.searchURL)
+		// add fetch for search with services function
+		roadgoatService.getSearch();
 	}
 
 	render() {
