@@ -10,8 +10,9 @@ import Users from '../Users/Users';
 class App extends Component {
 	state = {
 		user: authService.getUser(),
-		baseURL: "",
-		query: "",
+		loginAPI: process.env.REACT_APP_APIKEY,
+		baseURL: process.env.REACT_APP_BASEURL,
+		query: "q=",
 		searchTitle: "",
 		endpoint:""
 	}
