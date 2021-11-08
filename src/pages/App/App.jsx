@@ -39,6 +39,9 @@ class App extends Component {
 						handleSignupOrLogin={this.handleSignupOrLogin}
 					/>
 				</Route>
+				<Route exact path='/destinations'>
+
+				</Route>
 				<Route exact path='/login'>
 					<Login 
 						history={this.props.history}
