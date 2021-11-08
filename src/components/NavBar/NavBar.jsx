@@ -1,11 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import styles from './NavBar.module.css'
 
-const NavBar = ({ user, handleLogout }) => {
+const NavBar = ({ user, handleLogout, handleChange, handleSubmit }) => {
+	
 	return (
 		<>
 			{user ? (
-				<nav>
+				<nav className={styles.userNav}>
 					<div>
 						<ul>
 							<li>Welcome, {user.name}</li>
@@ -15,11 +17,17 @@ const NavBar = ({ user, handleLogout }) => {
 			  				<li>
 								  <Link to='' onClick={handleLogout}>Log Out</Link>
 							  </li>	
+							  <li>
+								  <Link to='/destinations'>Destinations</Link>
+							  </li>
+							  <li>
+								  <input>Search for destination</input>
+							  </li>
 						</ul>
 					</div>
 				</nav>
 			) : (
-				<nav>
+				<nav className={styles.nav}>
 					<div>
 						<ul>
 							<li>
@@ -31,6 +39,16 @@ const NavBar = ({ user, handleLogout }) => {
 							<li>
 								<Link to="/signup">Sign Up</Link>
 							</li>
+							<li>
+							    <Link to='/destinations'>Destinations</Link>
+							</li>
+							<li>
+								<form onSubmit={handleSubmit}>
+									<input onChange={handleChange} type='text' placeholder='Search for destination'></input>
+									<button type='submit' value="Submit" >Search</button>
+								</form>
+							</li>
+
 						</ul>
 					</div>
 				</nav>

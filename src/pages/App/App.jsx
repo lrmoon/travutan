@@ -9,7 +9,13 @@ import Users from '../Users/Users';
 
 class App extends Component {
 	state = {
-		user: authService.getUser()
+		user: authService.getUser(),
+		loginAPI: process.env.REACT_APP_APIKEY,
+		passAPI: process.env.REACT_APP_SECRETKEY,
+		baseURL: process.env.REACT_APP_BASEURL,
+		query: "q=",
+		searchTitle: "",
+		searchURL: ""
 	}
 
 	handleLogout = () => {
@@ -21,6 +27,21 @@ class App extends Component {
 	handleSignupOrLogin = () => {
 		this.setState({ user: authService.getUser() })
 	}
+	
+	handleChange = (e) => {
+		this.setState({searchTitle: e.target.value})
+		console.log(this.state.searchTitle)
+	}
+
+	handleSubmit = (e) => {
+		console.log("stuff")
+		e.preventDefault()
+		this.setState({
+			searchURL: this.state.baseURL + this.state.query + this.state.searchTitle, 
+			
+		})
+		console.log(this.state.searchURL)
+	}
 
 	render() {
 		const {user} = this.state
@@ -28,7 +49,9 @@ class App extends Component {
 			<>
 				<NavBar 
 					user={user} 
-					handleLogout={this.handleLogout} 
+					handleLogout={this.handleLogout}
+					handleChange={this.handleChange}
+					handleSubmit={this.handleSubmit} 
 				/>
 				<Route exact path='/'>
           			<Landing user={user} />
@@ -38,6 +61,9 @@ class App extends Component {
 						history={this.props.history}
 						handleSignupOrLogin={this.handleSignupOrLogin}
 					/>
+				</Route>
+				<Route exact path='/destinations'>
+
 				</Route>
 				<Route exact path='/login'>
 					<Login 
