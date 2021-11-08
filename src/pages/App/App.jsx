@@ -11,6 +11,7 @@ class App extends Component {
 	state = {
 		user: authService.getUser(),
 		loginAPI: process.env.REACT_APP_APIKEY,
+		passAPI: process.env.REACT_APP_SECRETKEY,
 		baseURL: process.env.REACT_APP_BASEURL,
 		query: "q=",
 		searchTitle: "",
