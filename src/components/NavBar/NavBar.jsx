@@ -21,7 +21,10 @@ const NavBar = ({ user, handleLogout, handleChange, handleSubmit }) => {
 								  <Link to='/destinations'>Destinations</Link>
 							  </li>
 							  <li>
-								  <input>Search for destination</input>
+							  	<form onSubmit={handleSubmit}>
+									<input onChange={handleChange} type='text' placeholder='Search for destination'></input>
+									<button type='submit' value="Submit" >Search</button>
+								</form>
 							  </li>
 						</ul>
 					</div>
