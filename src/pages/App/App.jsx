@@ -3,8 +3,10 @@ import { Route, Redirect} from 'react-router-dom'
 import NavBar from '../../components/NavBar/NavBar'
 import Signup from '../Signup/Signup'
 import Login from '../Login/Login'
+import SearchList from '../SearchList/SearchList'
 import Landing from '../Landing/Landing'
 import * as authService from '../../services/authService'
+import * as roadgoatService from './../../services/roadgoatService'
 import Users from '../Users/Users';
 
 class App extends Component {
@@ -34,13 +36,14 @@ class App extends Component {
 	}
 
 	handleSubmit = (e) => {
-		console.log("stuff")
 		e.preventDefault()
 		this.setState({
 			searchURL: this.state.baseURL + this.state.query + this.state.searchTitle, 
-			
+			searchTitle: ''
+		}, () => {
+			roadgoatService.getSearch(this.state.searchURL, this.state.loginAPI, this.state.passAPI)
+			.then(json => console.log(json))
 		})
-		console.log(this.state.searchURL)
 	}
 
 	render() {
@@ -77,7 +80,9 @@ class App extends Component {
 					render={() =>
 						user ? <Users /> : <Redirect to="/login" />
   					}
-/>
+				/>
+
+				{/* <SearchList search={this.state.searchURL}/> */}
 			</>
 		)
 	}
