@@ -33,7 +33,7 @@ class App extends Component {
 	
 	handleChange = (e) => {
 		this.setState({searchTitle: e.target.value})
-		console.log(this.state.searchTitle)
+		console.log("stuff")
 	}
 
 	handleSubmit = (e) => {
@@ -89,6 +89,7 @@ class App extends Component {
 
 				<Route exact path='/search'>
 					<SearchList search={this.state.searchURL}/>	
+
 				</Route>
 				
 
