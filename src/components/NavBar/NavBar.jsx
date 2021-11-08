@@ -1,11 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import styles from './NavBar.module.css'
 
 const NavBar = ({ user, handleLogout }) => {
 	return (
 		<>
 			{user ? (
-				<nav>
+				<nav className={styles.userNav}>
 					<div>
 						<ul>
 							<li>Welcome, {user.name}</li>
@@ -22,7 +23,7 @@ const NavBar = ({ user, handleLogout }) => {
 					</div>
 				</nav>
 			) : (
-				<nav>
+				<nav className={styles.nav}>
 					<div>
 						<ul>
 							<li>
@@ -33,6 +34,9 @@ const NavBar = ({ user, handleLogout }) => {
 							</li>
 							<li>
 								<Link to="/signup">Sign Up</Link>
+							</li>
+							<li>
+							    <Link to='/destinations'>Destinations</Link>
 							</li>
 						</ul>
 					</div>
