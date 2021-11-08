@@ -88,7 +88,7 @@ class App extends Component {
 				/>
 
 				<Route exact path='/search'>
-					<SearchList search={this.state.searchURL}/>	
+					<SearchList data={this.state.data}/>	
 
 				</Route>
 				
