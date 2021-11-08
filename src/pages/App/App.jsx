@@ -21,6 +21,7 @@ class App extends Component {
 	handleSignupOrLogin = () => {
 		this.setState({ user: authService.getUser() })
 	}
+	
 
 	render() {
 		const {user} = this.state

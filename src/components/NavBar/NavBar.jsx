@@ -19,6 +19,9 @@ const NavBar = ({ user, handleLogout }) => {
 							  <li>
 								  <Link to='/destinations'>Destinations</Link>
 							  </li>
+							  <li>
+								  <input>Search for destination</input>
+							  </li>
 						</ul>
 					</div>
 				</nav>
@@ -38,6 +41,12 @@ const NavBar = ({ user, handleLogout }) => {
 							<li>
 							    <Link to='/destinations'>Destinations</Link>
 							</li>
+							<li>
+								<form>
+									<input onChange={this.handleChange} type='text' placeholder='Search for destination'></input>
+								</form>
+							</li>
+
 						</ul>
 					</div>
 				</nav>
