@@ -14,4 +14,4 @@ Travutan is a web app that allows travelers to find everything they’re looking
 
 ## Link of the Trello Board plan
 
-[Link to Trello]()
+[Link to Trello](https://trello.com/b/DzlDJ9dt/project3)
