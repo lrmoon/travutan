@@ -2,7 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styles from './NavBar.module.css'
 
-const NavBar = ({ user, handleLogout }) => {
+const NavBar = ({ user, handleLogout, handleChange }) => {
+	
 	return (
 		<>
 			{user ? (
@@ -43,7 +44,7 @@ const NavBar = ({ user, handleLogout }) => {
 							</li>
 							<li>
 								<form>
-									<input onChange={this.handleChange} type='text' placeholder='Search for destination'></input>
+									<input onChange={handleChange} type='text' placeholder='Search for destination'></input>
 								</form>
 							</li>
 

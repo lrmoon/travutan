@@ -22,6 +22,9 @@ class App extends Component {
 		this.setState({ user: authService.getUser() })
 	}
 	
+	handleChange = (e) => {
+		console.log("search");
+	}
 
 	render() {
 		const {user} = this.state
@@ -29,7 +32,8 @@ class App extends Component {
 			<>
 				<NavBar 
 					user={user} 
-					handleLogout={this.handleLogout} 
+					handleLogout={this.handleLogout}
+					handleChange={this.handleChange} 
 				/>
 				<Route exact path='/'>
           			<Landing user={user} />
