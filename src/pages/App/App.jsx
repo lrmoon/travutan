@@ -8,6 +8,7 @@ import Landing from '../Landing/Landing'
 import * as authService from '../../services/authService'
 import * as roadgoatService from './../../services/roadgoatService'
 import Users from '../Users/Users';
+import { useHistory } from "react-router-dom";
 
 class App extends Component {
 	state = {
@@ -42,8 +43,12 @@ class App extends Component {
 			searchTitle: ''
 		}, () => {
 			roadgoatService.getSearch(this.state.searchURL, this.state.loginAPI, this.state.passAPI)
-			.then(json => console.log(json))
+			.then(json => this.setState({
+				data: json
+			}))
 		})
+
+		this.props.history.push('/search')
 	}
 
 	render() {
@@ -82,7 +87,11 @@ class App extends Component {
   					}
 				/>
 
-				{/* <SearchList search={this.state.searchURL}/> */}
+				<Route exact path='/search'>
+					<SearchList search={this.state.searchURL}/>	
+				</Route>
+				
+
 			</>
 		)
 	}
