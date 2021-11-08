@@ -9,7 +9,11 @@ import Users from '../Users/Users';
 
 class App extends Component {
 	state = {
-		user: authService.getUser()
+		user: authService.getUser(),
+		baseURL: "",
+		query: "",
+		searchTitle: "",
+		endpoint:""
 	}
 
 	handleLogout = () => {
@@ -23,7 +27,7 @@ class App extends Component {
 	}
 	
 	handleChange = (e) => {
-		console.log("search");
+		this.setState({value: e.target.value})
 	}
 
 	render() {
