@@ -1,4 +1,13 @@
 
 export function getSearch(endpoint, login, password){
-    console.log("get search service");
+    return(
+        fetch(endpoint, {
+            headers: new Headers({
+            "Authorization": `Basic ${btoa(`${login}:${password}`)}`
+            })
+        })
+        .then(res => res.json())      
+    )
 }
+
+

@@ -35,15 +35,26 @@ class App extends Component {
 	}
 
 	handleSubmit = (e) => {
+
 		console.log("stuff")
+
 		e.preventDefault()
 		this.setState({
 			searchURL: this.state.baseURL + this.state.query + this.state.searchTitle, 
-			
+			searchTitle: ''
 		})
+
 		console.log(this.state.searchURL)
+
 		// add fetch for search with services function
-		roadgoatService.getSearch();
+		// roadgoatService.getSearch(this.state.searchURL, this.state.loginAPI, this.state.passAPI)
+		fetch(this.state.searchURL, {
+            headers: new Headers({
+            "Authorization": `Basic ${btoa(`${this.state.loginAPI}:${this.state.passAPI}`)}`
+            })
+        })
+        .then(res => res.json())  
+		.then(json => console.log(json))
 	}
 
 	render() {
