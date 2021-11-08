@@ -8,6 +8,7 @@ import Landing from '../Landing/Landing'
 import * as authService from '../../services/authService'
 import * as roadgoatService from './../../services/roadgoatService'
 import Users from '../Users/Users';
+import { useHistory } from "react-router-dom";
 
 class App extends Component {
 	state = {
@@ -46,6 +47,8 @@ class App extends Component {
 				data: json
 			}))
 		})
+
+		this.props.history.push('/search')
 	}
 
 	render() {
