@@ -45,3 +45,7 @@ You also have the ability to see all users that are signed into the app, friend 
 ### REACT
 
 ### HTML and CSS
+
+
+
+## Planned for future anchancements
