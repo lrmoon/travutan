@@ -16,7 +16,7 @@ class SearchList extends Component{
                             <div className='searchDivs'>
                                 <Link to={{
                                     pathname: '/searchLinks',
-                                    state: val
+                                    state: {val}
                                 }}>{val.attributes.name}</Link>                    
                             </div>
                         ))

@@ -1,13 +1,22 @@
+// React / React Router imports
 import React, { Component } from 'react'
 import { Route, Redirect} from 'react-router-dom'
+
+// Components imports
 import NavBar from '../../components/NavBar/NavBar'
+
+// Page imports
 import Signup from '../Signup/Signup'
 import Login from '../Login/Login'
-import SearchList from '../SearchList/SearchList'
 import Landing from '../Landing/Landing'
+import Users from '../Users/Users'
+import SearchList from '../SearchList/SearchList'
+import SearchLink from './../SearchLink/SearchLink'
+
+// Services imports
 import * as authService from '../../services/authService'
 import * as roadgoatService from './../../services/roadgoatService'
-import Users from '../Users/Users';
+
 
 class App extends Component {
 	state = {
@@ -92,6 +101,9 @@ class App extends Component {
 
 				</Route>
 				
+				<Route exact path='/searchLinks'>
+					  <SearchLink />
+				</Route>
 
 			</>
 		)
