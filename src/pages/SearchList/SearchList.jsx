@@ -13,7 +13,7 @@ class SearchList extends Component{
                         this.props.search.data ?
                         this.props.search.data.map(val => (
 
-                            <div className='searchDivs'>
+                            <div key={val.id} className='searchDivs'>
                                 <Link to={{
                                     pathname: '/searchLinks',
                                     state: {val}

@@ -102,6 +102,7 @@ class App extends Component {
 				</Route>
 				
 				<Route exact path='/searchLinks'>
+					{/* use render location to persist data from link */}
 					  <SearchLink />
 				</Route>
 
