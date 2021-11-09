@@ -8,7 +8,6 @@ const NavBar = ({ user, handleLogout, handleChange, handleSubmit }) => {
 		<>
 			{user ? (
 				<nav className={styles.userNav}>
-					<div>
 						<ul>
 							<li>Welcome, {user.name}</li>
 							<li>
@@ -27,11 +26,9 @@ const NavBar = ({ user, handleLogout, handleChange, handleSubmit }) => {
 								</form>
 							  </li>
 						</ul>
-					</div>
 				</nav>
 			) : (
 				<nav className={styles.nav}>
-					<div>
 						<ul>
 							<li>
 								<Link to="/login">Log In</Link>
@@ -51,9 +48,7 @@ const NavBar = ({ user, handleLogout, handleChange, handleSubmit }) => {
 									<button type='submit' value="Submit" >Search</button>
 								</form>
 							</li>
-
 						</ul>
-					</div>
 				</nav>
 			)}
 		</>
