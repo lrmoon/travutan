@@ -42,7 +42,6 @@ class App extends Component {
 	
 	handleChange = (e) => {
 		this.setState({searchTitle: e.target.value})
-		console.log("stuff")
 	}
 
 	handleSubmit = (e) => {
