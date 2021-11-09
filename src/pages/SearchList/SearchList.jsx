@@ -3,15 +3,18 @@ import React, {Component} from 'react';
 class SearchList extends Component{
 
     render(){
-        console.log(typeof this.props.search.data);
+        console.log(this.props.search.data);
         return(
             <>
             <div>
-                    {/* {
-                        this.props.search.map(val => (
+                    {
+                        this.props.search.data ?
+                        this.props.search.data.map(val => (
                             console.log(val.id)
                         ))
-                    }                 */}
+                        :
+                        ''
+                    }                
             </div>
 
             </>
