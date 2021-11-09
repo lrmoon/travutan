@@ -1,3 +1,4 @@
+import {Link} from 'react-router-dom'
 
 import React, {Component} from 'react';
 class SearchList extends Component{
@@ -7,10 +8,14 @@ class SearchList extends Component{
         return(
             <>
             <div>
+                {/* conditional rendering, data is undefined the first time render runs */}
                     {
                         this.props.search.data ?
                         this.props.search.data.map(val => (
-                            console.log(val.id)
+
+                            <div className='searchDivs'>
+
+                            </div>
                         ))
                         :
                         ''
