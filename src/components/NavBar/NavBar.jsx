@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styles from './NavBar.module.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const NavBar = ({ user, handleLogout, handleChange, handleSubmit }) => {
 	
