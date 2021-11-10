@@ -3,9 +3,13 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema;
 
 const destinationReviewSchema = new Schema({
-   rating: Number,
+   rating: {
+        type: Number,
+        min: 1,
+        max: 5
+   },
    content: String,
-    reviews: [{ type: Schema.Types.ObjectId, ref: "destinationReview" }]
+   
   },{
     timestamps: true,
   });
