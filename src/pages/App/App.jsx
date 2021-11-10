@@ -100,10 +100,12 @@ class App extends Component {
 
 				</Route>
 				
-				<Route exact path='/searchLinks'>
-					{/* use render location to persist data from link */}
-					  <SearchLink />
-				</Route>
+				<Route exact path='/searchLinks'
+					render={({location}) => 
+					<SearchLink location={location}/>
+				}/>
+				{/* use render location to persist data from link */}
+					  
 
 			</>
 		)
