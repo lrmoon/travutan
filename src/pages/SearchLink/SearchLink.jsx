@@ -13,10 +13,11 @@ class SearchLink extends Component{
     
     async componentDidMount(){
 
-        const cityDetails = await roadgoatService.getCity(this.state.urlId, this.state.loginApi, this.state.passwordApi)
+        const cityJson = await roadgoatService.getCity(this.state.urlId, this.state.loginApi, this.state.passwordApi)
 
         this.setState({
-            cityDetails: cityDetails.data.attributes
+            cityDetails: cityJson.data.attributes
+            // set state of cityimages from cityJson included.images
         })
 
 
@@ -24,9 +25,14 @@ class SearchLink extends Component{
 
     render(){
         console.log(this.state.cityDetails.name);
+        const {cityDetails} = this.state
         return(
             <>
-                <h1>{this.state.cityDetails.long_name}</h1>
+                <h1>{cityDetails.long_name}</h1>
+                <p>Events: {cityDetails.google_events_url}</p>
+                <p>Airbnb: {cityDetails.airbnb_url}</p>
+                <p>Guides: {cityDetails.getyourguide_url}</p>
+                <p></p>
             </>
             
         )        
