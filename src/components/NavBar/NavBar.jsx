@@ -7,7 +7,6 @@ const NavBar = ({ user, handleLogout, handleChange, handleSubmit, searchTitle })
 	return (
 		<>
 			{user ? (
-
 				<nav className="navbar navbar-expand-lg navbar-light bg-light">
 					<div className="container-fluid">
 						<li className={styles.navElement}>TRAVUTAN</li>
@@ -21,17 +20,16 @@ const NavBar = ({ user, handleLogout, handleChange, handleSubmit, searchTitle })
 					</div>
 				</nav>
 			) : (
-
 				<nav className="navbar navbar-expand-lg navbar-light bg-light">
 					<div className="container-fluid">
-							<li><Link className={styles.navElement} to="/">TRAVUTAN</Link></li>
-							<li><Link className={styles.navElement} to='/destinations'>Destinations</Link></li>
-							<li><Link className={styles.navElement} to="/signup">Sign Up</Link></li>
-							<li><Link className={styles.navElement} to="/login">Log In</Link></li>
-							<form onSubmit={handleSubmit} className="d-flex">
-								<input onChange={handleChange} className="form-control me-2" type="search" placeholder="Search" aria-label="Search" value={searchTitle} />
-								<button value="Submit" className="btn btn-outline-dark" type="submit">Search</button>
-							</form>
+						<li><Link className={styles.navElement} to="/">TRAVUTAN</Link></li>
+						<li><Link className={styles.navElement} to='/destinations'>Destinations</Link></li>
+						<li><Link className={styles.navElement} to="/signup">Sign Up</Link></li>
+						<li><Link className={styles.navElement} to="/login">Log In</Link></li>
+						<form onSubmit={handleSubmit} className="d-flex">
+							<input onChange={handleChange} className="form-control me-2" type="search" placeholder="Search" aria-label="Search" value={searchTitle} />
+							<button value="Submit" className="btn btn-outline-dark" type="submit">Search</button>
+						</form>
 					</div>
 				</nav>
 			)}
