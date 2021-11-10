@@ -9,7 +9,8 @@ const destinationSchema = new Schema({
     wikiUrl: String,
     budget: String,
     population: Number,
-    reviews: [{ type: Schema.Types.ObjectId, ref: "destinationReview" }]
+    reviews: [{ type: Schema.Types.ObjectId, ref: "DestinationReview"}],
+    question: [{ type: Schema.Types.ObjectId, ref: "QuestionPost" }],
   },{
     timestamps: true,
   });

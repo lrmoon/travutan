@@ -22,7 +22,7 @@ const destinationReviewSchema = new Schema({
     timestamps: true,
   });
   
-  const DestinationReview = mongoose.model("Destination", destinationReviewSchema);
+  const DestinationReview = mongoose.model("DestinationReview", destinationReviewSchema);
 
 
 
