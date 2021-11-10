@@ -3,6 +3,11 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema;
 
 const destinationReviewSchema = new Schema({
+    title: String,
+    author: {
+        type: Schema.Types.ObjectId,
+        ref: 'Profile'
+    },
    rating: {
         type: Number,
         min: 1,
