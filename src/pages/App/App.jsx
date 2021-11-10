@@ -11,7 +11,8 @@ import Login from '../Login/Login'
 import Landing from '../Landing/Landing'
 import Users from '../Users/Users'
 import SearchList from '../SearchList/SearchList'
-import SearchLink from './../SearchLink/SearchLink'
+
+import SearchShow from '../SearchShow/SearchShow'
 
 // Services imports
 import * as authService from '../../services/authService'
@@ -103,7 +104,7 @@ class App extends Component {
 				
 				<Route exact path='/searchLinks'
 					render={({location}) => 
-					<SearchLink location={location}/>
+					<SearchShow location={location}/>
 				}/>
 				{/* use render location to persist data from link */}
 					  

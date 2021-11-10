@@ -1,7 +1,7 @@
-import * as roadgoatService from './../../services/roadgoatService'
+import * as roadgoatService from '../../services/roadgoatService'
 import React, {Component} from 'react'
 
-class SearchLink extends Component{
+class SearchShow extends Component{
 
     state = {
         loginApi: process.env.REACT_APP_APIKEY,
@@ -54,4 +54,4 @@ class SearchLink extends Component{
 
 }
 
-export default SearchLink
+export default SearchShow
