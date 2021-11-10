@@ -5,11 +5,8 @@ const Schema = mongoose.Schema;
 const destinationSchema = new Schema({
     title: String,
     image: String,
-    released: Date,
-    imageUrl: String,
-    collectedBy: [{ type: Schema.Types.ObjectId, ref: "Profile" }],
-    // To be filled in later
-    // reviews: [reference GameReview],
+    covid: String,
+    reviews: [{ type: Schema.Types.ObjectId, ref: "destinationReview" }]
   },{
     timestamps: true,
   });
