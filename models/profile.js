@@ -1,11 +1,15 @@
-import mongoose, { Schema } from 'mongoose'
+import mongoose from 'mongoose'
 
+const Schema = mongoose.Schema
 
-const profileSchema = new mongoose.Schema(
+const profileSchema = new Schema(
   {
     email: String,
     name: String,
-    destination: {Type:Schema.Types.ObjectId, ref:'Destination'}
+    destinations:[{
+      type: Schema.Types.ObjectId, 
+      ref: 'Destination'
+    }]
   },
   {
     timestamps: true,

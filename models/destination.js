@@ -10,7 +10,7 @@ const destinationSchema = new Schema({
     budget: String,
     population: Number,
     reviews: [{type: Schema.Types.ObjectId, ref: "DestinationReview"}],
-    questions: [{ type: Schema.Types.ObjectId, ref: "QuestionPost" }],
+    questions: [{ type: Schema.Types.ObjectId, ref: "QuestionPost"}],
   },{
     timestamps: true,
   });
