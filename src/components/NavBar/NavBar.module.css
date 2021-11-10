@@ -1,11 +1,18 @@
- nav{
+nav{
     display: flex;
     list-style-type: none;
     margin: 0;
     padding: 0;
   
   }
-  ul {
+
+  .navElement {
+    color: orange;
+  }
+
+ 
+
+  /* ul {
     display:flex;
     list-style-type: none;
     margin: 10px auto;
@@ -18,4 +25,4 @@
     text-align: center;
     text-decoration: none;
     margin-left: 20px;
-  }
+  }  */
