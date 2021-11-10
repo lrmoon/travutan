@@ -12,15 +12,24 @@ class SearchList extends Component{
                     {
                         this.props.search.data ?
                         this.props.search.data.map(val => (
+                            // only render destination types that are cities
+                            val.attributes.destination_type === 'City' ?
 
                             <div key={val.id} className='searchDivs'>
+                                
                                 <Link to={{
                                     pathname: '/searchLinks',
                                     state: {val}
-                                }}>{val.attributes.name}</Link>                    
+                                }}>{val.attributes.name} {val.id}</Link>                    
                             </div>
+
+                            :
+
+                            ''
                         ))
+
                         :
+                        
                         ''
                     }                
             </div>
