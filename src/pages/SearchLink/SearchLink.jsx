@@ -16,7 +16,8 @@ class SearchLink extends Component{
         const cityJson = await roadgoatService.getCity(this.state.urlId, this.state.loginApi, this.state.passwordApi)
 
         this.setState({
-            cityDetails: cityJson.data.attributes
+            cityDetails: cityJson.data.attributes,
+            cityImages: cityJson.included
             // set state of cityimages from cityJson included.images
         })
 
@@ -24,8 +25,9 @@ class SearchLink extends Component{
     }
 
     render(){
-        console.log(this.state.cityDetails.name);
-        const {cityDetails} = this.state
+        const {cityDetails, cityImages} = this.state
+        // find the object thats right before the object whose attribute has user 
+        console.log(cityImages);
 
         const covidData = cityDetails.covid;
         const firstCovidLocal = cityDetails.covid ? Object.keys(covidData)[0] : ''  
