@@ -17,7 +17,7 @@ class SearchLink extends Component{
 
         this.setState({
             cityDetails: cityJson.data.attributes,
-            cityImages: cityJson.included
+            cityIncluded: cityJson.included
             // set state of cityimages from cityJson included.images
         })
 
@@ -25,17 +25,23 @@ class SearchLink extends Component{
     }
 
     render(){
-        const {cityDetails, cityImages} = this.state
+        const {cityDetails, cityIncluded} = this.state
         // find the object thats right before the object whose attribute has user 
-        console.log(cityImages);
+        console.log(cityIncluded);
 
+        // drilling covid info
         const covidData = cityDetails.covid;
         const firstCovidLocal = cityDetails.covid ? Object.keys(covidData)[0] : ''  
 
+        // drilling budget info
         const budgetData = cityDetails.budget;
         const firstBudgetLocal = cityDetails.budget ? Object.keys(budgetData)[0] : ''
 
-        console.log("covid " + firstCovidLocal, "budget " + firstBudgetLocal);
+        // drilling image info
+        const photosArray = cityIncluded ? cityIncluded.filter((photo) => photo.type === 'photo'): ''
+        const lastPhoto = photosArray ? photosArray[photosArray.length -1].attributes.image.full : ''
+
+        console.log(lastPhoto);
         
         return(
             <>
