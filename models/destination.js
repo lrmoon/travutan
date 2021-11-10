@@ -7,6 +7,8 @@ const destinationSchema = new Schema({
     image: String,
     covid: String,
     wikiUrl: String,
+    budget: String,
+    population: Number,
     reviews: [{ type: Schema.Types.ObjectId, ref: "destinationReview" }]
   },{
     timestamps: true,
