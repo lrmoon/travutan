@@ -12,11 +12,11 @@ class SearchLink extends Component{
     
     componentDidMount(){
 
-        roadgoatService.getCity(1, 2, 3)
+        roadgoatService.getCity(this.state.urlId, this.state.loginApi, this.state.passwordApi)
+        .then(json => console.log(json))
     }
 
     render(){
-        console.log(this.state.urlId);
         const {val} = this.props.location.state
 
         return(
