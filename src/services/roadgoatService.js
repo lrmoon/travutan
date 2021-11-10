@@ -12,8 +12,6 @@ export function getSearch(endpoint, login, password){
 }
 
 export function getCity(id, login, password){
-    console.log(id, login, password)
-    
     return (
         fetch(baseurl + id, {
             headers: new Headers({

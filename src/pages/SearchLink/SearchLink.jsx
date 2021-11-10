@@ -7,21 +7,28 @@ class SearchLink extends Component{
         loginApi: process.env.REACT_APP_APIKEY,
         passwordApi: process.env.REACT_APP_SECRETKEY,
         urlId: this.props.location.state.val.id,
-        cityDetails: {}
+        cityDetails: {},
+        cityImages: []
     }
     
-    componentDidMount(){
+    async componentDidMount(){
 
-        roadgoatService.getCity(this.state.urlId, this.state.loginApi, this.state.passwordApi)
-        .then(json => console.log(json))
+        const cityDetails = await roadgoatService.getCity(this.state.urlId, this.state.loginApi, this.state.passwordApi)
+
+        this.setState({
+            cityDetails: cityDetails.data.attributes
+        })
+
+
     }
 
     render(){
-        const {val} = this.props.location.state
-
+        console.log(this.state.cityDetails.name);
         return(
-            // remove this, we want the fetched value from city details
-            <h1>{val.attributes.name}</h1>
+            <>
+                <h1>{this.state.cityDetails.long_name}</h1>
+            </>
+            
         )        
     }
 
