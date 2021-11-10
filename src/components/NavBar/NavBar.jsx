@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-// import styles from './NavBar.module.css'
+import styles from './NavBar.module.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 const NavBar = ({ user, handleLogout, handleChange, handleSubmit }) => {
@@ -10,7 +10,7 @@ const NavBar = ({ user, handleLogout, handleChange, handleSubmit }) => {
 
 				<nav className="navbar navbar-expand-lg navbar-light bg-light">
 					<div className="container-fluid">
-						<li className="navElement">TRAVUTAN</li>
+						<li className={styles.nav}>TRAVUTAN</li>
 						<li className="navElement"><Link to="/users">Users</Link></li>
 						<li className="navElement"><Link to='' onClick={handleLogout}>Log Out</Link></li>
 						<li className="navElement"><Link to='/destinations'>Destinations</Link></li>
@@ -25,10 +25,10 @@ const NavBar = ({ user, handleLogout, handleChange, handleSubmit }) => {
 
 				<nav className="navbar navbar-expand-lg navbar-light bg-light">
 					<div className="container-fluid">
-							<li className="navElement"><Link to="/">Home</Link></li>
-							<li className="navElement"><Link to='/destinations'>Destinations</Link></li>
-							<li className="navElement"><Link to="/signup">Sign Up</Link></li>
-							<li className="navElement"><Link to="/login">Log In</Link></li>
+							<li className={styles.navElement}><Link to="/">TRAVUTAN</Link></li>
+							<li className={styles.navElement}><Link to='/destinations'>Destinations</Link></li>
+							<li className={styles.navElement}><Link to="/signup">Sign Up</Link></li>
+							<li className={styles.navElement}><Link to="/login">Log In</Link></li>
 							<form onSubmit={handleSubmit} className="d-flex">
 								<input onChange={handleChange} className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
 								<button value="Submit" className="btn btn-outline-dark" type="submit">Search</button>
