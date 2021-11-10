@@ -13,7 +13,7 @@ const questionPostSchema = new Schema({
     content: String,
     author: { type: Schema.Types.ObjectId, ref: "Profile"},
     replies: [replySchema],
-    destination: {
+    destination:{
         type: Schema.Types.ObjectId, ref:'Destination'
     }
 
