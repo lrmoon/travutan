@@ -1,8 +1,11 @@
 import * as roadgoatService from './../../services/roadgoatService'
+import {useLocation} from 'react-router-dom'
 
 function SearchLink(){
+    let location = useLocation().state.val;
+    console.log(location)
     return(
-        <h1>hi</h1>
+        <h1>{location.attributes.name}</h1>
     )
 }
 
