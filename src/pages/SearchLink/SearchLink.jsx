@@ -26,13 +26,19 @@ class SearchLink extends Component{
     render(){
         console.log(this.state.cityDetails.name);
         const {cityDetails} = this.state
+
+        const covidData = cityDetails.covid;
+        if(cityDetails.covid) {
+          const firstPlace = Object.keys(covidData)[0];  
+          console.log(firstPlace);
+        }
+        
         return(
             <>
                 <h1>{cityDetails.long_name}</h1>
-                <p>Events: {cityDetails.google_events_url}</p>
-                <p>Airbnb: {cityDetails.airbnb_url}</p>
-                <p>Guides: {cityDetails.getyourguide_url}</p>
-                <p></p>
+                <a href={cityDetails.google_events_url}>Events</a><br/>
+                <a href={cityDetails.airbnb_url}>Airbnb</a>
+                <p>Covid Level: </p>
             </>
             
         )        
