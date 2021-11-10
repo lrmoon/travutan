@@ -1,28 +1,19 @@
-nav{
+
+nav {
     display: flex;
     list-style-type: none;
     margin: 0;
     padding: 0;
-  
   }
 
-  .navElement {
+
+.navElement{
     color: orange;
+    text-decoration: none;
+  }
+
+  .removeLine li {
+    text-decoration: none;
   }
 
  
-
-  /* ul {
-    display:flex;
-    list-style-type: none;
-    margin: 10px auto;
-    padding: 0;
-    
-    
-  }
-
-  li{
-    text-align: center;
-    text-decoration: none;
-    margin-left: 20px;
-  }  */
