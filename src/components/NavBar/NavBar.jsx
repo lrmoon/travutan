@@ -25,18 +25,10 @@ const NavBar = ({ user, handleLogout, handleChange, handleSubmit }) => {
 
 				<nav className="navbar navbar-expand-lg navbar-light bg-light">
 					<div className="container-fluid">
-							<li className="navElement">
-								<Link to="/">Home</Link>
-							</li>
-							<li className="navElement">
-								<Link to='/destinations'>Destinations</Link>
-							</li>
-							<li className="navElement">
-								<Link to="/signup">Sign Up</Link>
-							</li>
-							<li className="navElement">
-								<Link to="/login">Log In</Link>
-							</li>
+							<li className="navElement"><Link to="/">Home</Link></li>
+							<li className="navElement"><Link to='/destinations'>Destinations</Link></li>
+							<li className="navElement"><Link to="/signup">Sign Up</Link></li>
+							<li className="navElement"><Link to="/login">Log In</Link></li>
 							<form onSubmit={handleSubmit} className="d-flex">
 								<input onChange={handleChange} className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
 								<button value="Submit" className="btn btn-outline-dark" type="submit">Search</button>
