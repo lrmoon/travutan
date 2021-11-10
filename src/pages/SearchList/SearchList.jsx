@@ -4,7 +4,6 @@ import React, {Component} from 'react';
 class SearchList extends Component{
 
     render(){
-        console.log(this.props.search.data);
         return(
             <>
             <div>
