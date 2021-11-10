@@ -1,17 +1,23 @@
 import mongoose from 'mongoose'
 
-export {
-  Profile
-}
+const Schema = mongoose.Schema
 
-const profileSchema = new mongoose.Schema(
+const profileSchema = new Schema(
   {
     email: String,
     name: String,
+    destinations:[{
+      type: Schema.Types.ObjectId, 
+      ref: 'Destination'
+    }]
   },
   {
     timestamps: true,
   }
-)
-
-const Profile = mongoose.model('Profile', profileSchema)
+  )
+  
+  const Profile = mongoose.model('Profile', profileSchema)
+  
+  export {
+    Profile
+  }
