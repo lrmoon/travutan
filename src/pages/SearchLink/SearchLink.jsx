@@ -28,17 +28,21 @@ class SearchLink extends Component{
         const {cityDetails} = this.state
 
         const covidData = cityDetails.covid;
-       
-        const firstPlace = cityDetails.covid ? Object.keys(covidData)[0] : ''  
+        const firstCovidLocal = cityDetails.covid ? Object.keys(covidData)[0] : ''  
 
-        console.log(firstPlace);
+        const budgetData = cityDetails.budget;
+        const firstBudgetLocal = cityDetails.budget ? Object.keys(budgetData)[0] : ''
+
+        console.log("covid " + firstCovidLocal, "budget " + firstBudgetLocal);
         
         return(
             <>
                 <h1>{cityDetails.long_name}</h1>
+                {/* img here */}
+                <p>{`Budget: ${cityDetails.budget ? cityDetails.budget[firstBudgetLocal].text : ''}`}</p>
                 <a href={cityDetails.google_events_url}>Events</a><br/>
                 <a href={cityDetails.airbnb_url}>Airbnb</a>
-                <p>{`Covid Level: ${cityDetails.covid ? cityDetails.covid[firstPlace].text : ''}`}</p>
+                <p>{`Covid Level: ${cityDetails.covid ? cityDetails.covid[firstCovidLocal].text : ''}`}</p>
             </>
             
         )        
