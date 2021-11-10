@@ -9,7 +9,10 @@ const destinationReviewSchema = new Schema({
         max: 5
    },
    content: String,
-   
+   destination: {
+       type: Schema.Types.ObjectId,
+       ref: 'Destination'
+   }
   },{
     timestamps: true,
   });
