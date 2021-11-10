@@ -3,8 +3,8 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema;
 
 const destinationSchema = new Schema({
-    name: String,
-    rawgId: Number,
+    title: String,
+    image: String,
     released: Date,
     imageUrl: String,
     collectedBy: [{ type: Schema.Types.ObjectId, ref: "Profile" }],
