@@ -10,7 +10,7 @@ const NavBar = ({ user, handleLogout, handleChange, handleSubmit }) => {
 
 				<nav className="navbar navbar-expand-lg navbar-light bg-light">
 					<div className="container-fluid">
-						<li className={styles.nav}>TRAVUTAN</li>
+						<li className={styles.navElement}>TRAVUTAN</li>
 						<li className="navElement"><Link to="/users">Users</Link></li>
 						<li className="navElement"><Link to='' onClick={handleLogout}>Log Out</Link></li>
 						<li className="navElement"><Link to='/destinations'>Destinations</Link></li>
