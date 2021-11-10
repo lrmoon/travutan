@@ -7,7 +7,22 @@ const NavBar = ({ user, handleLogout, handleChange, handleSubmit }) => {
 	return (
 		<>
 			{user ? (
-				<nav className={styles.userNav}>
+
+				<nav className="navbar navbar-expand-lg navbar-light bg-light">
+					<div className="container-fluid">
+						<li>TRAVUTAN</li>
+						<li><Link to="/users">Users</Link></li>
+						<li><Link to='' onClick={handleLogout}>Log Out</Link></li>
+						<li><Link to='/destinations'>Destinations</Link></li>
+						<li className="navElement"><Link to="/login">Log In</Link></li>
+						<form onSubmit={handleSubmit} className="d-flex">
+							<input onChange={handleChange} className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+							<button value="Submit" className="btn btn-outline-dark" type="submit">Search</button>
+						</form>
+					</div>
+				</nav>
+
+				/* <nav className={styles.userNav}>
 						<ul>
 							<li>Welcome, {user.name}</li>
 							<li>
@@ -26,7 +41,7 @@ const NavBar = ({ user, handleLogout, handleChange, handleSubmit }) => {
 								</form>
 							  </li>
 						</ul>
-				</nav>
+				</nav> */
 			) : (
 
 				<nav className="navbar navbar-expand-lg navbar-light bg-light">
