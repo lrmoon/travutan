@@ -26,8 +26,6 @@ class SearchLink extends Component{
 
     render(){
         const {cityDetails, cityIncluded} = this.state
-        // find the object thats right before the object whose attribute has user 
-        console.log(cityIncluded);
 
         // drilling covid info
         const covidData = cityDetails.covid;
@@ -40,20 +38,17 @@ class SearchLink extends Component{
         // drilling image info
         const photosArray = cityIncluded ? cityIncluded.filter((photo) => photo.type === 'photo'): ''
         const lastPhoto = photosArray ? photosArray[photosArray.length -1].attributes.image.full : ''
-
-        console.log(lastPhoto);
         
         return(
             <>
                 <h1>{cityDetails.long_name}</h1>
-                <img width='200px' src={lastPhoto}></img>
+                <img width='200px' src={lastPhoto} alt='comingsoon'></img>
                 <p>{`Budget: ${cityDetails.budget ? cityDetails.budget[firstBudgetLocal].text : ''}`}</p>
                 <a href={cityDetails.google_events_url}>Events</a><br/>
                 <a href={cityDetails.airbnb_url}>Airbnb</a>
                 <p>{`Covid Level: ${cityDetails.covid ? cityDetails.covid[firstCovidLocal].text : ''}`}</p>
                 <button>Add to collection</button>
             </>
-            
         )        
     }
 
