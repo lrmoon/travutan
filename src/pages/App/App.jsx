@@ -68,6 +68,7 @@ class App extends Component {
 					handleLogout={this.handleLogout}
 					handleChange={this.handleChange}
 					handleSubmit={this.handleSubmit} 
+					searchTitle={this.state.searchTitle}
 				/>
 				<Route exact path='/'>
           			<Landing user={user} />

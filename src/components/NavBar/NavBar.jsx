@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import styles from './NavBar.module.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-const NavBar = ({ user, handleLogout, handleChange, handleSubmit }) => {
+const NavBar = ({ user, handleLogout, handleChange, handleSubmit, searchTitle }) => {
 	return (
 		<>
 			{user ? (
@@ -15,7 +15,7 @@ const NavBar = ({ user, handleLogout, handleChange, handleSubmit }) => {
 						<li><Link className={styles.navElement} to='/destinations'>Destinations</Link></li>
 						<li><Link className={styles.navElement} to='' onClick={handleLogout}>Log Out</Link></li>
 						<form onSubmit={handleSubmit} className="d-flex">
-							<input onChange={handleChange} className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+							<input onChange={handleChange} className="form-control me-2" type="search" placeholder="Search" aria-label="Search" value={searchTitle} />
 							<button value="Submit" className="btn btn-outline-dark" type="submit">Search</button>
 						</form>
 					</div>
@@ -29,7 +29,7 @@ const NavBar = ({ user, handleLogout, handleChange, handleSubmit }) => {
 							<li><Link className={styles.navElement} to="/signup">Sign Up</Link></li>
 							<li><Link className={styles.navElement} to="/login">Log In</Link></li>
 							<form onSubmit={handleSubmit} className="d-flex">
-								<input onChange={handleChange} className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+								<input onChange={handleChange} className="form-control me-2" type="search" placeholder="Search" aria-label="Search" value={searchTitle} />
 								<button value="Submit" className="btn btn-outline-dark" type="submit">Search</button>
 							</form>
 					</div>
