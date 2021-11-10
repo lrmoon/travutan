@@ -3,7 +3,7 @@ import bcrypt from 'bcrypt'
 
 const SALT_ROUNDS = 6
 
-export { User }
+
 
 const userSchema = new mongoose.Schema({
   name: String,
@@ -39,3 +39,5 @@ userSchema.methods.comparePassword = function(tryPassword, cb) {
 }
 
 const User = mongoose.model('User', userSchema)
+
+export { User }
