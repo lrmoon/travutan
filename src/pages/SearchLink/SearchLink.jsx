@@ -46,11 +46,12 @@ class SearchLink extends Component{
         return(
             <>
                 <h1>{cityDetails.long_name}</h1>
-                {/* img here */}
+                <img width='200px' src={lastPhoto}></img>
                 <p>{`Budget: ${cityDetails.budget ? cityDetails.budget[firstBudgetLocal].text : ''}`}</p>
                 <a href={cityDetails.google_events_url}>Events</a><br/>
                 <a href={cityDetails.airbnb_url}>Airbnb</a>
                 <p>{`Covid Level: ${cityDetails.covid ? cityDetails.covid[firstCovidLocal].text : ''}`}</p>
+                <button>Add to collection</button>
             </>
             
         )        
