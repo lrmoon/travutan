@@ -54,7 +54,13 @@ class SearchShow extends Component{
                 <a href={cityDetails.wikipedia_url}>Wiki</a>
                 <p>{`Covid Level: ${cityDetails.covid ? cityDetails.covid[firstCovidLocal].text : ''}`}</p>
 
-                <form>
+                <form onSubmit={this.handleSubmit}>
+                    <input hidden type='text' value={cityDetails.long_name} name="title"/>
+                    <input hidden type='text' value={lastPhoto} name='image'/>
+                    <input hidden type='text' value={cityDetails.budget[firstBudgetLocal].text} name='budget'/>
+                    <input hidden type='number' value={cityDetails.population} name='population'/>
+                    <input hidden type='text' value={cityDetails.wikipedia_url} name='wikiUrl'/>
+                    <input hidden type='text' value={cityDetails.covid[firstCovidLocal].text} name='covid'/>
                     <button>Add to collection</button>    
                 </form>
                 
