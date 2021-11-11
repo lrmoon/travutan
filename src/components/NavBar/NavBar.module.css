@@ -5,15 +5,23 @@ nav {
     margin: 0;
     padding: 0;
   }
-
+li{
+    font-size: 25px;
+}
 
 .navElement{
     color: orange;
     text-decoration: none;
   }
+  .navElement:hover{
+    color:orange;
+    text-decoration: underline;
+  }
 
   .removeLine li {
     text-decoration: none;
   }
+
+  
 
  
