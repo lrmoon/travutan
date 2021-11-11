@@ -1,6 +1,7 @@
 import * as roadgoatService from '../../services/roadgoatService';
 import React, { Component } from 'react';
 import './SearchShow.css';
+//  import { Destination } from '../../../models/destination';
 
 class SearchShow extends Component {
   state = {
@@ -24,9 +25,11 @@ class SearchShow extends Component {
       // set state of cityimages from cityJson included.images
     });
   }
+
   addCollection(data) {
-    console.log(data);
+    // console.log(data);
   }
+
   render() {
     const { cityDetails, cityIncluded } = this.state;
 
