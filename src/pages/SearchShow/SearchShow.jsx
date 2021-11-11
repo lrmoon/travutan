@@ -8,8 +8,7 @@ class SearchShow extends Component{
         loginApi: process.env.REACT_APP_APIKEY,
         passwordApi: process.env.REACT_APP_SECRETKEY,
         urlId: this.props.location.state.val.id,
-        cityDetails: {},
-        cityImages: []
+        cityDetails: {}
     }
     
     async componentDidMount(){
@@ -25,7 +24,13 @@ class SearchShow extends Component{
 
     }
 
+    handleSubmit = e => {
+        e.preventDefault();
+        console.log('handle submit')
+    }
+
     render(){
+        
         const {cityDetails, cityIncluded} = this.state
 
         // drilling covid info
@@ -48,7 +53,11 @@ class SearchShow extends Component{
                 <p>Population: {cityDetails.population}</p><br/>
                 <a href={cityDetails.wikipedia_url}>Wiki</a>
                 <p>{`Covid Level: ${cityDetails.covid ? cityDetails.covid[firstCovidLocal].text : ''}`}</p>
-                <button>Add to collection</button>
+
+                <form>
+                    <button>Add to collection</button>    
+                </form>
+                
             </div>
         )        
     }
