@@ -1,5 +1,6 @@
 import * as roadgoatService from '../../services/roadgoatService'
 import React, {Component} from 'react'
+import './SearchShow.css'
 
 class SearchShow extends Component{
 
@@ -40,7 +41,7 @@ class SearchShow extends Component{
         const lastPhoto = photosArray ? photosArray[photosArray.length -1].attributes.image.full : ''
         
         return(
-            <>
+            <div className='show'>
                 <h1>{cityDetails.long_name}</h1>
                 <img width='200px' src={lastPhoto} alt='comingsoon'></img>
                 <p>{`Budget: ${cityDetails.budget ? cityDetails.budget[firstBudgetLocal].text : ''}`}</p>
@@ -48,7 +49,7 @@ class SearchShow extends Component{
                 <a href={cityDetails.airbnb_url}>Airbnb</a>
                 <p>{`Covid Level: ${cityDetails.covid ? cityDetails.covid[firstCovidLocal].text : ''}`}</p>
                 <button>Add to collection</button>
-            </>
+            </div>
         )        
     }
 
