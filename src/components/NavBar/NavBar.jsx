@@ -20,9 +20,14 @@ const NavBar = ({ user, handleLogout, handleChange, handleSubmit, searchTitle })
 					</div>
 				</nav>
 			) : (
-				<nav className="navbar navbar-expand-lg navbar-light bg-light">
+				<nav className="navbar navbar-expand-lg navbar-light bg-white">
 					<div className="container-fluid removeLine">
-						<li><Link className={styles.navElement} to="/">TRAVUTAN</Link></li>
+						<div>
+						<span>
+						<img src='/images/travutan_icon.png' alt="icon" style={{height:"100px", width: "100px", margin: "0px"}}></img>
+						</span>
+						<Link className={styles.navElement} style={{fontSize: "50px", margin: "0px"}} to="/">TRAVUTAN</Link>
+						</div>
 						<li><Link className={styles.navElement} to='/destinations'>Destinations</Link></li>
 						<li><Link className={styles.navElement} to="/signup">Sign Up</Link></li>
 						<li><Link className={styles.navElement} to="/login">Log In</Link></li>
