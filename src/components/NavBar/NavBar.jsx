@@ -9,7 +9,7 @@ const NavBar = ({ user, handleLogout, handleChange, handleSubmit, searchTitle })
 			{user ? (
 				<nav className="navbar navbar-expand-lg navbar-light bg-light">
 					<div className="container-fluid">
-						<li><Link className={styles.navElement} to="/">TRAVUTAN</Link></li>
+						<li><Link styles={{fontSize:'30px'}} className={styles.navElement} to="/">TRAVUTAN</Link></li>
 						<li><Link className={styles.navElement} to="/users">Users</Link></li>
 						<li><Link className={styles.navElement} to='/destinations'>Destinations</Link></li>
 						<li><Link className={styles.navElement} to='' onClick={handleLogout}>Log Out</Link></li>
