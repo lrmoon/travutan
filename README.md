@@ -30,9 +30,9 @@ You also have the ability to see all users that are signed into the app, friend 
 
 
 ## Sreenshots
-![travutan img]](https://imgur.com/96F2JrG)
+![travutan img](https://imgur.com/96F2JrG)
 
-![travutan img]](https://imgur.com/0oIkZfi)
+![travutan img](https://imgur.com/0oIkZfi)
 
 ## Technologies-used
 ### NodeJS
