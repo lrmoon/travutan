@@ -44,8 +44,8 @@ class SearchShow extends Component{
                 <h1>{cityDetails.long_name}</h1>
                 <img width='200px' src={lastPhoto} alt='comingsoon'></img>
                 <p>{`Budget: ${cityDetails.budget ? cityDetails.budget[firstBudgetLocal].text : ''}`}</p>
-                <a href={cityDetails.google_events_url}>Events</a><br/>
-                <a href={cityDetails.airbnb_url}>Airbnb</a>
+                <p>Population: {cityDetails.population}</p><br/>
+                <a href={cityDetails.wikipedia_url}>Wiki</a>
                 <p>{`Covid Level: ${cityDetails.covid ? cityDetails.covid[firstCovidLocal].text : ''}`}</p>
                 <button>Add to collection</button>
             </>
