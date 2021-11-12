@@ -35,9 +35,6 @@ class SearchShow extends Component{
             covid: e.target[5].value
         }
 
-        // make a fetch to the back end, then setstate to rerender the page
-        console.log(formBody)
-
         this.props.handleAddDestination(formBody)
     }
 

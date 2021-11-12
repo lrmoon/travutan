@@ -32,8 +32,8 @@ class App extends Component {
 		search: []
 	}
 
-	handleAddDestination = (body) => {
-		backEndService.create()
+	handleAddDestination = async body => {
+		const newDestination = await backEndService.create(body)
 	}
 
 	handleLogout = () => {
