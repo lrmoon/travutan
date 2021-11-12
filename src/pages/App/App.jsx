@@ -17,6 +17,7 @@ import SearchShow from '../SearchShow/SearchShow'
 // Services imports
 import * as authService from '../../services/authService'
 import * as roadgoatService from './../../services/roadgoatService'
+import * as backEndService from './../../services/backendService'
 
 
 class App extends Component {
@@ -29,6 +30,10 @@ class App extends Component {
 		searchTitle: "",
 		searchURL: "",
 		search: []
+	}
+
+	handleAddDestination = (body) => {
+		backEndService.create()
 	}
 
 	handleLogout = () => {
@@ -104,7 +109,7 @@ class App extends Component {
 				
 				<Route exact path='/searchShow'
 					render={({location}) => 
-					<SearchShow location={location}/>
+					<SearchShow location={location} handleAddDestination={this.handleAddDestination}/>
 				}/>
 
 			</>

@@ -26,9 +26,6 @@ class SearchShow extends Component{
 
     handleSubmit = e => {
         e.preventDefault();
-
-        console.log(e.target[0].value, e.target[1].value, e.target[2].value, e.target[3].value, e.target[4].value, e.target[5].value)
-
         const formBody = {
             title: e.target[0].value,
             image: e.target[1].value,
@@ -38,7 +35,10 @@ class SearchShow extends Component{
             covid: e.target[5].value
         }
 
+        // make a fetch to the back end, then setstate to rerender the page
         console.log(formBody)
+
+        this.props.handleAddDestination(formBody)
     }
 
     render(){
