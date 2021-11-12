@@ -38,15 +38,15 @@ class SearchShow extends Component{
         if(cityDetails.covid){
             // drilling covid info
             const covidData = cityDetails.covid;
-            const firstCovidLocal = cityDetails.covid ? Object.keys(covidData)[0] : null  
+            const firstCovidLocal = cityDetails.covid ? Object.keys(covidData)[0] : ''  
 
             // drilling budget info
             const budgetData = cityDetails.budget;
-            const firstBudgetLocal = cityDetails.budget ? Object.keys(budgetData)[0] : null
+            const firstBudgetLocal = cityDetails.budget ? Object.keys(budgetData)[0] : ''
 
             // drilling image info
-            const photosArray = cityIncluded ? cityIncluded.filter((photo) => photo.type === 'photo'): null
-            const lastPhoto = photosArray ? photosArray[photosArray.length -1].attributes.image.full : null
+            const photosArray = cityIncluded ? cityIncluded.filter((photo) => photo.type === 'photo'): ''
+            const lastPhoto = photosArray ? photosArray[photosArray.length -1].attributes.image.full : ''
             
             return(
                 <div className='show'>
@@ -59,13 +59,13 @@ class SearchShow extends Component{
                     <p>{`Covid Level: ${cityDetails.covid ? cityDetails.covid[firstCovidLocal].text : ''}`}</p>
 
                     <form onSubmit={this.handleSubmit}>
-                        <input hidden type='text' value={cityDetails.long_name} name="title" readOnly/>
-                        <input hidden type='text' value={lastPhoto} name='image' readOnly/>
-                        <input hidden type='text' value={cityDetails.budget ? cityDetails.budget[firstBudgetLocal].text : null} name='budget' readOnly/>
-                        <input hidden type='number' value={cityDetails.population} name='population' readOnly/>
-                        <input hidden type='text' value={cityDetails.wikipedia_url} name='wikiUrl' readOnly/>
-                        <input hidden type='text' value={cityDetails.covid ? cityDetails.covid[firstCovidLocal].text : null} name='covid' readOnly/>
-                        <button>Add to collection</button>    
+                        <input hidden type='text' value={cityDetails.long_name ? cityDetails.long_name : ''} name="title" readOnly/>
+                        <input hidden type='text' value={lastPhoto ? lastPhoto : ''} name='image' readOnly/>
+                        <input hidden type='text' value={cityDetails.budget ? cityDetails.budget[firstBudgetLocal].text : ''} name='budget' readOnly/>
+                        <input hidden type='number' value={cityDetails.population ? cityDetails.population : ''} name='population' readOnly/>
+                        <input hidden type='text' value={cityDetails.wikipedia_url ? cityDetails.wikipedia_url : ''} name='wikiUrl' readOnly/>
+                        <input hidden type='text' value={cityDetails.covid ? cityDetails.covid[firstCovidLocal].text : ''} name='covid' readOnly/>
+                        <button type='submit'>Add to collection</button>    
                     </form>
                     
                 </div>
