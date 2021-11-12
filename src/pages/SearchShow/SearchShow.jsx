@@ -30,8 +30,8 @@ class SearchShow extends Component{
             title: e.target[0].value,
             image: e.target[1].value,
             budget: e.target[2].value,
-            population: parseInt(e.target[3].value),
-            wikiUrl: e.target[4].value,
+            population: e.target[3].value ? parseInt(e.target[3].value) : 0,
+            wikiUrl: e.target[4].value ? e.target[4].value : 'https://en.wikipedia.org/wiki/Main_Page',
             covid: e.target[5].value
         }
 

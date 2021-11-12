@@ -34,8 +34,8 @@ class App extends Component {
 		destinations: []
 	}
 
-	handleAddDestination = async body => {
-		const newDestination = await backEndService.create(body)
+	handleAddDestination = async formBody => {
+		const newDestination = await backEndService.create(formBody)
 
 		// this.setState({
 		// 	destinations: [...this.state.destinations, newDestination]

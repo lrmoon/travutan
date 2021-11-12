@@ -8,4 +8,5 @@ export function create(destination){
         headers: {'content-type': 'application/json'},
         body: JSON.stringify(destination)
     })
+    .then(res => res.json())
 }
