@@ -29,11 +29,18 @@ class App extends Component {
 		query: "q=",
 		searchTitle: "",
 		searchURL: "",
-		search: []
+		search: [],
+		// destinations will be an array of destinations created, 
+		destinations: []
 	}
 
 	handleAddDestination = async body => {
 		const newDestination = await backEndService.create(body)
+
+		// this.setState({
+		// 	destinations: [...this.state.destinations, newDestination]
+		// })
+		// use a history push to redirect?
 	}
 
 	handleLogout = () => {
