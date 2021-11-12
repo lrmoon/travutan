@@ -66,6 +66,8 @@ class SearchShow extends Component{
                     <a href={cityDetails.wikipedia_url}>Wiki</a>
                     <p>{`Covid Level: ${cityDetails.covid ? cityDetails.covid[firstCovidLocal].text : ''}`}</p>
 
+                    {/* people who are not logged in should not be able to handle a submit */}
+                    {/* possibly make a condition on submit checking to see if there is a token */}
                     <form onSubmit={this.handleSubmit}>
                         <input hidden type='text' value={cityDetails.long_name ? cityDetails.long_name : ''} name="title" readOnly/>
                         <input hidden type='text' value={lastPhoto ? lastPhoto : ''} name='image' readOnly/>
