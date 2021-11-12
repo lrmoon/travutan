@@ -27,7 +27,18 @@ class SearchShow extends Component{
     handleSubmit = e => {
         e.preventDefault();
 
-        console.log('handle submit')
+        console.log(e.target[0].value, e.target[1].value, e.target[2].value, e.target[3].value, e.target[4].value, e.target[5].value)
+
+        const formBody = {
+            title: e.target[0].value,
+            image: e.target[1].value,
+            budget: e.target[2].value,
+            population: parseInt(e.target[3].value),
+            wikiUrl: e.target[4].value,
+            covid: e.target[5].value
+        }
+
+        console.log(formBody)
     }
 
     render(){
