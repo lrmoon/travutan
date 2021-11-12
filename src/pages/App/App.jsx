@@ -17,6 +17,7 @@ import SearchShow from '../SearchShow/SearchShow'
 // Services imports
 import * as authService from '../../services/authService'
 import * as roadgoatService from './../../services/roadgoatService'
+import * as backEndService from './../../services/backendService'
 
 
 class App extends Component {
@@ -28,7 +29,18 @@ class App extends Component {
 		query: "q=",
 		searchTitle: "",
 		searchURL: "",
-		search: []
+		search: [],
+		// destinations will be an array of destinations created, 
+		destinations: []
+	}
+
+	handleAddDestination = async formBody => {
+		const newDestination = await backEndService.create(formBody)
+
+		// this.setState({
+		// 	destinations: [...this.state.destinations, newDestination]
+		// })
+		// use a history push to redirect?
 	}
 
 	handleLogout = () => {
@@ -104,7 +116,7 @@ class App extends Component {
 				
 				<Route exact path='/searchShow'
 					render={({location}) => 
-					<SearchShow location={location}/>
+					<SearchShow location={location} handleAddDestination={this.handleAddDestination}/>
 				}/>
 
 			</>
