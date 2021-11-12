@@ -1,69 +1,62 @@
-# MERN Stack with OAuth Template
+# TRAVUTAN
 
-This is a MERN Stack template that includes JWT Authentication.
+A new way for travelers to discover their next destination.
+Are you a traveler looking for your next destination?
+Tired of searching everywhere on the internet about your next destination?
+Want everything you’re looking for in one spot?
 
-Use this to go build things! 🚀
+Travutan🚀🚀 is a web app that allows travelers to find everything they’re looking for about their next destination. Connecting travelers looking for help to find potential destinations, or simply browsing to know more about a specific destination.
 
-## To Use This Template
 
-__Replace `<name-of-your-app-here>` in the commands below with the name of your app!__
+## Link of the deployment app
 
-```bash
-git clone https://github.com/SEI-Remote-WC/mern-jwt-auth-template-no-hooks <name-of-your-app-here>
-cd <name-of-your-app-here>
-```
 
-Once you are in the project directory:
 
-```bash
-rm -rf .git
-```
+## Link of the Trello Board plan
 
-Here's what your command line output should like after this step (note that the indicator that we are in a git repository is gone!)
+[Link to Trello](https://trello.com/b/DzlDJ9dt/project3)
 
-<img src="https://i.imgur.com/L47kNOZ.png" alt="The command line before and after running the rm -rf .git command. Before git:(main) is visible indiating that the directory contains a git repository, after the command it is not.">
 
-Re-initialize a git repository:
 
-```bash
-git init
-```
+## App Usage
 
-Use the GitHub CLI to create a new project repository on GitHub:
+You are requier to sign up then loggin into the app in order to use all the ressources available to you.
 
-```bash
-gh repo create <name-of-your-app-here>
-```
+Once loggin, you have the power to see every city, country in the world. you will also know if the country is a high risk (covid) to visit at that moment. Do not worry, we had taken care of that.In addition, you have the option to bookmark a specific place that you will like to visit later. is it cool!!!
 
-Run npm i to fetch the template's dependencies:
+You will have the ability to update you profile information since nowadays, everyone like to use a nickname on their social media.
 
-```bash
-npm i
-```
+You also have the ability to see all users that are signed into the app, friend them and unfriend them.
 
-Then, make an initial commit:
 
-```bash
-git add .
-git commit -m "initial commit"
-git push -u origin main
-```
+## Sreenshots
+![travutan img](https://i.imgur.com/1uOaKH9.png)
 
-touch a .env file:
+![travutan img](https://i.imgur.com/0oIkZfi.png)
 
-```bash
-touch .env
-```
+## Technologies-used
+### NodeJS
 
-Fill it with the following:
+### Express
 
-```
-DATABASE_URL=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-SECRET=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-```
+### MongoDB
 
-Replace the `DATABASE_URL` and `SECRET` with values that you provide.
+### JavaScript
 
-Delete this README.md
+### REACT
 
-You're done!
+### HTML and CSS
+
+
+
+## Planned for future enhancements
+
+AAU have a profile page where my Favorite place are shown. be able to unfavorite on my profile.
+
+AAU I want to see when a review was made.
+
+AAU I want to see how many reviews I have made.
+
+AAU I want to see my profile with my reviews.
+
+AAU I want to be able to update a travel destination review.

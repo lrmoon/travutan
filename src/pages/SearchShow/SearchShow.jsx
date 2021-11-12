@@ -1,3 +1,4 @@
+
 import * as roadgoatService from '../../services/roadgoatService'
 import React, {Component} from 'react'
 import './SearchShow.css'
@@ -85,7 +86,5 @@ class SearchShow extends Component{
         }
           
     }
-
 }
-
-export default SearchShow
+export default SearchShow;
