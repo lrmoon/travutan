@@ -4,7 +4,7 @@ const Landing = ({user}) => {
   return (
     <main className={styles.container}>
       <h1>
-        Welcome to travutan {user ? user.name : ""}
+        Welcome to Travutan {user ? user.name : ""}
       </h1>
     </main>
   )
