@@ -1,4 +1,4 @@
-const baseUrl = '/api/destinations'
+const BASE_URL = '/api/destinations'
 
 // post request
 export function create(body){
