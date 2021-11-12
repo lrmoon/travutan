@@ -59,18 +59,16 @@ class SearchShow extends Component{
                     <p>{`Covid Level: ${cityDetails.covid ? cityDetails.covid[firstCovidLocal].text : ''}`}</p>
 
                     <form onSubmit={this.handleSubmit}>
-                        <input hidden type='text' value={cityDetails.long_name} name="title"/>
-                        <input hidden type='text' value={lastPhoto} name='image'/>
-                        <input hidden type='text' value={cityDetails.budget ? cityDetails.budget[firstBudgetLocal].text : null} name='budget'/>
-                        <input hidden type='number' value={cityDetails.population} name='population'/>
-                        <input hidden type='text' value={cityDetails.wikipedia_url} name='wikiUrl'/>
-                        <input hidden type='text' value={cityDetails.covid ? cityDetails.covid[firstCovidLocal].text : null} name='covid'/>
+                        <input hidden type='text' value={cityDetails.long_name} name="title" readOnly/>
+                        <input hidden type='text' value={lastPhoto} name='image' readOnly/>
+                        <input hidden type='text' value={cityDetails.budget ? cityDetails.budget[firstBudgetLocal].text : null} name='budget' readOnly/>
+                        <input hidden type='number' value={cityDetails.population} name='population' readOnly/>
+                        <input hidden type='text' value={cityDetails.wikipedia_url} name='wikiUrl' readOnly/>
+                        <input hidden type='text' value={cityDetails.covid ? cityDetails.covid[firstCovidLocal].text : null} name='covid' readOnly/>
                         <button>Add to collection</button>    
                     </form>
                     
-
                 </div>
-
             )          
         } else {
             return <h1>Loading...</h1>
