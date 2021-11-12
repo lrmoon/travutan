@@ -7,6 +7,7 @@ import cors from 'cors'
 
 import { router as usersRouter } from './routes/users.js'
 import { router as authRouter } from './routes/auth.js'
+import { router as destinationRouter } from './routes/destination.js'
 
 import('./config/database.js')
 
@@ -19,6 +20,8 @@ app.use(express.json())
 
 app.use('/api/users', usersRouter)
 app.use('/api/auth', authRouter)
+app.use('/api/destination', destinationRouter)
+
 
 app.get('/*', function (req, res) {
   res.sendFile(
