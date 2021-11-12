@@ -27,6 +27,7 @@ class SearchShow extends Component{
 
     handleSubmit = e => {
         e.preventDefault();
+        
         const formBody = {
             title: e.target[0].value,
             image: e.target[1].value,
@@ -35,7 +36,7 @@ class SearchShow extends Component{
             wikiUrl: e.target[4].value ? e.target[4].value : 'https://en.wikipedia.org/wiki/Main_Page',
             covid: e.target[5].value
         }
-
+        console.log(formBody)
         this.props.handleAddDestination(formBody)
     }
 
