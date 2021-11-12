@@ -35,11 +35,16 @@ class App extends Component {
 	}
 
 	handleAddDestination = async formBody => {
-		const newDestination = await backEndService.create(formBody)
+		 const newDestination = await backEndService.create(formBody)
 
-		// this.setState({
-		// 	destinations: [...this.state.destinations, newDestination]
-		// })
+		console.log(newDestination)
+		
+		this.setState({
+			destinations: [...this.state.destinations, newDestination]
+		}, () => {
+			console.log(this.state.destinations)	
+		})
+		
 		// use a history push to redirect?
 	}
 
