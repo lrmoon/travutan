@@ -14,11 +14,12 @@
 }
 
 .destinationCard img{
-  box-shadow: 2px 2px 18px black;
+  box-shadow: 2px 2px 8px black;
   transition: all 0.5s;
 }
 
 .destinationCard img:hover {
-  box-shadow: 2px 2px 18px rgb(255, 115, 0);
+  box-shadow: 1px 2px 18px rgb(0, 0, 0);
+  transform: skewY(1deg);
   cursor: pointer;
 }
