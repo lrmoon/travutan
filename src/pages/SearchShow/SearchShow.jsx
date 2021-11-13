@@ -64,8 +64,8 @@ class SearchShow extends Component{
                     <h1>{cityDetails.long_name}</h1>
                     <img width='200px' src={lastPhoto} alt='comingsoon'></img>
                     <p>{`Budget: ${cityDetails.budget ? cityDetails.budget[firstBudgetLocal].text : ''}`}</p>
-                    <p>Population: {cityDetails.population}</p><br/>
-                    <a href={cityDetails.wikipedia_url}>Wiki</a>
+                    <p>Population: {cityDetails.population ? cityDetails.population : 'N/A'}</p><br/>
+                    <a href={cityDetails.wikipedia_url ? cityDetails.wikipedia_url : 'https://en.wikipedia.org/wiki/Main_Page'}>Wiki</a>
                     <p>{`Covid Level: ${cityDetails.covid ? cityDetails.covid[firstCovidLocal].text : ''}`}</p>
 
                     {/* people who are not logged in should not be able to handle a submit */}
