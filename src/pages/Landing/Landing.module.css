@@ -36,7 +36,12 @@ span {
 }
 
 a {
-  text-decoration: none !important;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: black;
 }
 
 /*************************** Search list ****************/
