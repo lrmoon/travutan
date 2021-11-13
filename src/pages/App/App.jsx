@@ -139,7 +139,7 @@ class App extends Component {
 				
 				<Route exact path='/searchShow'
 					render={({location}) => 
-					<SearchShow location={location} handleAddDestination={this.handleAddDestination}/>
+					<SearchShow user={user} location={location} handleAddDestination={this.handleAddDestination}/>
 				}/>
 
 			</>
