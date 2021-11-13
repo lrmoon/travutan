@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom'
+import styles from '../Login/Login.module.css'
 
 class SearchList extends Component{
 
     render(){
         return(
-            <div>
+            <div className={styles.container}>
                 <h1> Search List</h1>
                     {
                         this.props.search.data ?

@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
 
+/*************************** Landing Page ****************/
+
 .headerH1 {
   font-family: 'Yuji Boku', serif;
   color: #F05945;
@@ -19,6 +21,21 @@ span {
 .container {
   text-align: center;
 }
+
+/*************************** Search list ****************/
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 60vh;
+  width: 90vh;
+  margin: 5% auto;
+  background-color: orange;
+  text-align: center;
+  padding: 5%;
+}
+/*************************** Search list ****************/
+
 
 .flexContainer {
   display: flex;
