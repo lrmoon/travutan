@@ -23,7 +23,7 @@ span {
 }
 
 /*************************** Search list ****************/
-.container {
+.searchList {
   display: flex;
   align-items: center;
   flex-direction: column;
