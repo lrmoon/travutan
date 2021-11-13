@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
 .container {
   display: flex;
   align-items: center;
@@ -7,5 +9,6 @@
   background-color: orange;
   text-align: center;
   padding: 5%;
+  font-family: 'Permanent Marker', cursive;
 }
   
