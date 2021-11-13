@@ -34,6 +34,11 @@ span {
   padding: 5%;
   font-family: 'Permanent Marker', cursive;
 }
+
+a {
+  text-decoration: none !important;
+}
+
 /*************************** Search list ****************/
 
 
