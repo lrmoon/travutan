@@ -2,7 +2,7 @@ import styles from './Landing.module.css'
 
 const Landing = ({user, destinations}) => {
   return (
-    <main className={styles.container}><br />
+    <main className={styles.container}>
       <h1 className={styles.headerH1}>
         <span>W</span>elcome to <span>T</span>ravutan {user ? user.name : ""}
       </h1> <br /> <br />
