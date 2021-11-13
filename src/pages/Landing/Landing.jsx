@@ -10,7 +10,7 @@ const Landing = ({user, destinations}) => {
         {
           destinations.map((destination, idx) => (
             <div className={styles.destinationCard} key={idx}>
-              <h2>{destination.title}</h2>
+              <h4>{destination.title}</h4>
               <img width="90%" src={destination.image} alt='soon'/>
             </div>
           ))

@@ -1,6 +1,6 @@
 // React / React Router imports
 import React, { Component } from 'react'
-import { Route, Redirect} from 'react-router-dom'
+import { Route, Redirect, useHistory} from 'react-router-dom'
 
 // Components imports
 import NavBar from '../../components/NavBar/NavBar'
@@ -21,6 +21,7 @@ import * as backEndService from './../../services/backendService'
 
 
 class App extends Component {
+
 	state = {
 		user: authService.getUser(),
 		loginAPI: process.env.REACT_APP_APIKEY,
@@ -54,7 +55,7 @@ class App extends Component {
 			console.log(this.state.destinations)	
 		})
 		
-		// use a history push to redirect?
+		this.props.history.push('/')
 	}
 
 	handleLogout = () => {

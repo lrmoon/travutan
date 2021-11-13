@@ -1,7 +1,4 @@
 .container {
-  /* display: flex;
-  align-items: center;
-  flex-direction: column; */
   text-align: center;
 }
 
@@ -12,5 +9,16 @@
 }
 
 .destinationCard {
-  width: 33%;
+  width: 30%;
+  margin: 10px;
+}
+
+.destinationCard img{
+  box-shadow: 2px 2px 18px black;
+  transition: all 0.5s;
+}
+
+.destinationCard img:hover {
+  box-shadow: 2px 2px 18px rgb(255, 115, 0);
+  cursor: pointer;
 }
