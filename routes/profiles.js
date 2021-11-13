@@ -8,7 +8,7 @@ const router = Router()
 
 router.use(decodeUserFromToken)
 
-router.get('/', checkAuth, profileCtrl.index);
+router.get('/', checkAuth, profileCtrl.show);
 
 
 
