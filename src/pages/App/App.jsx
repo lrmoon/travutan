@@ -11,6 +11,7 @@ import Login from '../Login/Login'
 import Landing from '../Landing/Landing'
 import Users from '../Users/Users'
 import SearchList from '../SearchList/SearchList'
+import Destinations from '../Destinations/Destinations'
 
 import SearchShow from '../SearchShow/SearchShow'
 
@@ -89,6 +90,11 @@ class App extends Component {
 		this.props.history.push('/search')
 	}
 
+	handleProfile = (e) => {
+		e.preventDefault()
+		backEndService.getProfile();
+	}
+
 	render() {
 		const {user} = this.state
 		return (
@@ -110,7 +116,7 @@ class App extends Component {
 					/>
 				</Route>
 				<Route exact path='/destinations'>
-
+					<Destinations user={user} profileDestinations={this.state.profileDestinations} />
 				</Route>
 				<Route exact path='/login'>
 					<Login 
@@ -133,7 +139,7 @@ class App extends Component {
 				
 				<Route exact path='/searchShow'
 					render={({location}) => 
-					<SearchShow location={location} handleAddDestination={this.handleAddDestination}/>
+					<SearchShow user={user} location={location} handleAddDestination={this.handleAddDestination}/>
 				}/>
 
 			</>

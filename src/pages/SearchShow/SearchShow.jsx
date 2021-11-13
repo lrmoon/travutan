@@ -1,6 +1,7 @@
 
 import * as roadgoatService from '../../services/roadgoatService'
 import React, {Component} from 'react'
+import {Link} from 'react-router-dom'
 import './SearchShow.css'
 
 class SearchShow extends Component{
@@ -77,7 +78,8 @@ class SearchShow extends Component{
                         <input hidden type='number' value={cityDetails.population ? cityDetails.population : ''} name='population' readOnly/>
                         <input hidden type='text' value={cityDetails.wikipedia_url ? cityDetails.wikipedia_url : ''} name='wikiUrl' readOnly/>
                         <input hidden type='text' value={cityDetails.covid ? cityDetails.covid[firstCovidLocal].text : ''} name='covid' readOnly/>
-                        <button type='submit'>Add to collection</button>    
+                        {this.props.user? <button type='submit'>Add to collection</button> : <Link to="/signup">Add to collection</Link>}
+                        
                     </form>
                     
                 </div>
