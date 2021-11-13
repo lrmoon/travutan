@@ -1,3 +1,5 @@
+import * as tokenService from "../services/tokenService";
+
 const BASE_URL = '/api/destinations'
 const PROFILE_URL ='/api/profile'
 //------------ for destinations
@@ -19,6 +21,13 @@ export function getAll(){
 }
 //------------ for profile destinations
 export function getProfile(){
-return fetch(PROFILE_URL)
-    .then(res => res.json())
-}
+    return fetch(
+        PROFILE_URL,
+        {
+          headers: { Authorization: "Bearer " + tokenService.getToken() },
+        },
+        { mode: "cors" }
+      ).then((res) => res.json())
+      
+    }
+  
