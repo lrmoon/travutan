@@ -7,11 +7,15 @@ const PROFILE_URL ='/api/profile'
 export function create(destination){
     console.log('create fetch', destination);
     return fetch(BASE_URL, {
+        
         method: 'POST',
-        headers: {'content-type': 'application/json'},
+        headers: {'content-type': 'application/json',
+                    Authorization : "Bearer" + tokenService.getToken()},
         body: JSON.stringify(destination)
-    })
-    .then(res => res.json())
+        },
+        {mode: "cors"}
+        ).then(res => res.json())
+        
 }
 //get all destinations
 export function getAll(){
