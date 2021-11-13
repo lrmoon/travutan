@@ -5,7 +5,11 @@
 .headerH1 {
   font-family: 'Yuji Boku', serif;
   color: #F05945;
-  font-size: 60px;
+  font-size: 50px;
+}
+
+span {
+  font-size: 70px;
 }
 
 .headerH4 {
