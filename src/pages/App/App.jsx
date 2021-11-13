@@ -11,6 +11,7 @@ import Login from '../Login/Login'
 import Landing from '../Landing/Landing'
 import Users from '../Users/Users'
 import SearchList from '../SearchList/SearchList'
+import Destinations from '../Destinatons/Destinations.jsx'
 
 import SearchShow from '../SearchShow/SearchShow'
 
@@ -110,7 +111,7 @@ class App extends Component {
 					/>
 				</Route>
 				<Route exact path='/destinations'>
-
+					<Destinations user={user} destinations={this.state.destinations} />
 				</Route>
 				<Route exact path='/login'>
 					<Login 
