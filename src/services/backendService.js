@@ -13,6 +13,6 @@ export function create(destination){
 
 export function getAll(){
     console.log('get all')
-    // return fetch(BASE_URL)
-    // .then(res => res.json())
+    return fetch(BASE_URL)
+    .then(res => res.json())
 }

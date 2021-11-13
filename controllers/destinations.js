@@ -8,11 +8,22 @@ function create(req, res){
     .catch(err => console.log(err))
 }
 
+function index(req, res){
+    Destination.find({})
+    .then(destinations => {
+        res.status(200).json(destinations)
+    })
+    .catch(err => {
+    res.json(err)
+    })
+}
+
 function deleteDestination(req, res){
     console.log()
 }
 
 export {
     create,
-    deleteDestination as delete
+    deleteDestination as delete,
+    index
 }

@@ -34,8 +34,15 @@ class App extends Component {
 		destinations: []
 	}
 
-	componentDidMount(){
-		const allDestination =  backEndService.getAll()
+	async componentDidMount(){
+		const allDestinations =  await backEndService.getAll()
+		
+		console.log('alldestinations', allDestinations);
+
+		this.setState({
+			destinations: allDestinations
+		}, () => {console.log("state destinations", this.state.destinations);})
+
 	}
 
 	handleAddDestination = async formBody => {
