@@ -78,7 +78,7 @@ class SearchShow extends Component{
                         <input hidden type='number' value={cityDetails.population ? cityDetails.population : ''} name='population' readOnly/>
                         <input hidden type='text' value={cityDetails.wikipedia_url ? cityDetails.wikipedia_url : ''} name='wikiUrl' readOnly/>
                         <input hidden type='text' value={cityDetails.covid ? cityDetails.covid[firstCovidLocal].text : ''} name='covid' readOnly/>
-                        {this.props.user? <button type='submit'>Add to collection</button> : <Link to="/login">Add to collection</Link>}
+                        {this.props.user? <button type='submit'>Add to collection</button> : <Link to="/signup">Add to collection</Link>}
                         
                     </form>
                     
