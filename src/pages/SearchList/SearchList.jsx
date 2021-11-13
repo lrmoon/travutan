@@ -14,7 +14,7 @@ class SearchList extends Component{
                         // only render destination types that are cities
                         val.attributes.destination_type === 'City' ?
                         <div key={val.id} className='searchDivs'>   
-                            <Link to={{
+                            <Link style={{fontFamily: 'arial', fontSize:'25px'}} to={{
                                 pathname: '/searchShow',
                                 state: {val}
                             }}>

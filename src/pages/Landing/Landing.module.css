@@ -27,12 +27,12 @@ span {
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: 60vh;
   width: 90vh;
   margin: 5% auto;
   background-color: orange;
   text-align: center;
   padding: 5%;
+  font-family: 'Permanent Marker', cursive;
 }
 /*************************** Search list ****************/
 
