@@ -1,6 +1,6 @@
 // React / React Router imports
 import React, { Component } from 'react'
-import { Route, Redirect} from 'react-router-dom'
+import { Route, Redirect, useHistory} from 'react-router-dom'
 
 // Components imports
 import NavBar from '../../components/NavBar/NavBar'
@@ -21,6 +21,7 @@ import * as backEndService from './../../services/backendService'
 
 
 class App extends Component {
+
 	state = {
 		user: authService.getUser(),
 		loginAPI: process.env.REACT_APP_APIKEY,
@@ -30,14 +31,25 @@ class App extends Component {
 		searchTitle: "",
 		searchURL: "",
 		search: [],
-		// destinations will be an array of destinations created, 
-		destinations: []
+		// destinations will be an array of destinations collection, 
+		destinations: [],
+		// profileDest will be an array of destinations in profile destinations array,
+		profileDestinations: []
+	}
+
+	async componentDidMount(){
+		const allDestinations =  await backEndService.getAll()
+
+		console.log('alldestinations', allDestinations);
+
+		this.setState({
+			destinations: allDestinations
+		}, () => {console.log("state destinations", this.state.destinations);})
+
 	}
 
 	handleAddDestination = async formBody => {
-		 const newDestination = await backEndService.create(formBody)
-
-		console.log(newDestination)
+		const newDestination = await backEndService.create(formBody)
 		
 		this.setState({
 			destinations: [...this.state.destinations, newDestination]
@@ -45,7 +57,7 @@ class App extends Component {
 			console.log(this.state.destinations)	
 		})
 		
-		// use a history push to redirect?
+		this.props.history.push('/')
 	}
 
 	handleLogout = () => {
@@ -89,7 +101,7 @@ class App extends Component {
 					searchTitle={this.state.searchTitle}
 				/>
 				<Route exact path='/'>
-          			<Landing user={user} />
+          			<Landing user={user} destinations={this.state.destinations}/>
         		</Route>
 				<Route exact path='/signup'>
 					<Signup 
