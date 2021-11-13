@@ -2,16 +2,16 @@ import styles from './Landing.module.css'
 
 const Landing = ({user, destinations}) => {
   return (
-    <main className={styles.container}>
+    <main className={styles.container}><br />
       <h1 className={styles.headerH1}>
         Welcome to Travutan {user ? user.name : ""}
-      </h1>
+      </h1> <br /> <br />
       <div className={styles.flexContainer}>
         {
           destinations.map((destination, idx) => (
             <div className={styles.destinationCard} key={idx}>
               <h4>{destination.title}</h4>
-              <img width="60%" src={destination.image} alt='soon'/>
+              <img width="95%" src={destination.image} alt='soon'/>
             </div>
           ))
         }
