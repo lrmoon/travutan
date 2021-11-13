@@ -31,8 +31,10 @@ class App extends Component {
 		searchTitle: "",
 		searchURL: "",
 		search: [],
-		// destinations will be an array of destinations created, 
-		destinations: []
+		// destinations will be an array of destinations collection, 
+		destinations: [],
+		// profileDest will be an array of destinations in profile destinations array,
+		profileDestinations: []
 	}
 
 	async componentDidMount(){
