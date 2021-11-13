@@ -36,7 +36,7 @@ class App extends Component {
 
 	async componentDidMount(){
 		const allDestinations =  await backEndService.getAll()
-		
+
 		console.log('alldestinations', allDestinations);
 
 		this.setState({
@@ -98,7 +98,7 @@ class App extends Component {
 					searchTitle={this.state.searchTitle}
 				/>
 				<Route exact path='/'>
-          			<Landing user={user} />
+          			<Landing user={user} destinations={this.state.destinations}/>
         		</Route>
 				<Route exact path='/signup'>
 					<Signup 

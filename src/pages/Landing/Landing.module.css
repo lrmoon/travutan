@@ -1,5 +1,16 @@
 .container {
-  display: flex;
+  /* display: flex;
   align-items: center;
-  flex-direction: column;
+  flex-direction: column; */
+  text-align: center;
+}
+
+.flexContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.destinationCard {
+  width: 33%;
 }
