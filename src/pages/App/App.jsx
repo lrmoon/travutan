@@ -111,7 +111,7 @@ class App extends Component {
 					/>
 				</Route>
 				<Route exact path='/destinations'>
-					<Destinations user={user} destinations={this.state.destinations} />
+					<Destinations user={user} profileDestinations={this.state.profileDestinations} />
 				</Route>
 				<Route exact path='/login'>
 					<Login 
