@@ -11,7 +11,7 @@ import Login from '../Login/Login'
 import Landing from '../Landing/Landing'
 import Users from '../Users/Users'
 import SearchList from '../SearchList/SearchList'
-import Destinations from '../Destinatons/Destinations.jsx'
+import Destinations from '../Destinations/Destinations'
 
 import SearchShow from '../SearchShow/SearchShow'
 
