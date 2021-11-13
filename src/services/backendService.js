@@ -1,7 +1,7 @@
 const BASE_URL = '/api/destinations'
 const PROFILE_URL ='/api/profile'
 //------------ for destinations
-// post request
+// post request to create a destination
 export function create(destination){
     console.log('create fetch', destination);
     return fetch(BASE_URL, {
@@ -19,5 +19,6 @@ export function getAll(){
 }
 //------------ for profile destinations
 export function getProfile(){
-
+return fetch(PROFILE_URL)
+    .then(res => res.json())
 }
