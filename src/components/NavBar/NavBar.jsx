@@ -16,8 +16,7 @@ const NavBar = ({ user, handleLogout, handleChange, handleSubmit, searchTitle })
 							<Link className={styles.navElement} style={{fontSize: "50px", margin: "0px"}} to="/">TRAVUTAN</Link>
 						</div>
 						<li><Link className={styles.navElement} to="/users">Users</Link></li>
-						<li><Link className={styles.navElement} to="/profile">Profile</Link></li>
-						<li><Link className={styles.navElement} to='/destinations'>Destinations</Link></li>
+						<li><Link className={styles.navElement} to='/destinations'> My Destinations</Link></li>
 						<li><Link className={styles.navElement} to='' onClick={handleLogout}>Log Out</Link></li>
 						<form onSubmit={handleSubmit} className="d-flex">
 							<input onChange={handleChange} className="form-control me-2" type="search" placeholder="Search" aria-label="Search" value={searchTitle} />
