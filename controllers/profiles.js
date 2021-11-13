@@ -2,6 +2,7 @@ import { Profile } from "../models/profile.js"
 import {Destination} from "../models/destination.js"
 
 function show(req, res) {
+    console.log(req.user)
     // Find the profile that was clicked
     Profile.findById(req.params.id)
     // Populate friends to get profile data for each of them

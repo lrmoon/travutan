@@ -90,6 +90,11 @@ class App extends Component {
 		this.props.history.push('/search')
 	}
 
+	handleProfile = (e) => {
+		e.preventDefault()
+		backEndService.getProfile();
+	}
+
 	render() {
 		const {user} = this.state
 		return (
