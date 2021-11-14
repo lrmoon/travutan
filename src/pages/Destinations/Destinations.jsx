@@ -1,10 +1,10 @@
 import styles from './Destinations.module.css'
 
-const Destinations = ({user, profileDestinations}) => {
+const Destinations = ({profile, profileDestinations}) => {
   return (
     <main className={styles.container}>
       <h1>
-         {user ? user.name : ""}'s Favorite Destinations
+         {profile ? profile.name : ""}'s Favorite Destinations
       </h1>
       <div className={styles.flexContainer}>
         {

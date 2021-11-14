@@ -96,7 +96,7 @@ class App extends Component {
 		
 		this.setState({
 			profile
-		}, () => {console.log(this.state.profile)})
+		})
 	}
 
 	render() {
@@ -121,7 +121,7 @@ class App extends Component {
 					/>
 				</Route>
 				<Route exact path='/destinations'>
-					<Destinations user={user} profileDestinations={this.state.profileDestinations} />
+					<Destinations profile={this.state.profile} profileDestinations={this.state.profileDestinations} />
 				</Route>
 				<Route exact path='/login'>
 					<Login 
