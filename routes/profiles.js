@@ -6,14 +6,14 @@ const router = Router()
 
 /*---------- Public Routes ----------*/
 
-router.use(decodeUserFromToken)
-
-router.get('/', checkAuth, profileCtrl.show);
 
 
 
 
 /*---------- Protected Routes ----------*/
+router.use(decodeUserFromToken)
 
+router.get('/', checkAuth, profileCtrl.show);
+router.delete('/:id', checkAuth, profileCtrl.delete)
 
 export { router }
