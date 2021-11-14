@@ -35,6 +35,7 @@ class App extends Component {
 		// destinations will be an array of destinations collection, 
 		destinations: [],
 		// profileDest will be an array of destinations in profile destinations array,
+		profile: {},
 		profileDestinations: []
 	}
 
@@ -90,9 +91,12 @@ class App extends Component {
 		this.props.history.push('/search')
 	}
 
-	handleProfile = (e) => {
-		e.preventDefault()
-		backEndService.getProfile();
+	handleProfile = async () => {
+		const profile = await backEndService.getProfile();
+		
+		this.setState({
+			profile
+		})
 	}
 
 	render() {
@@ -105,6 +109,7 @@ class App extends Component {
 					handleChange={this.handleChange}
 					handleSubmit={this.handleSubmit} 
 					searchTitle={this.state.searchTitle}
+					handleProfile={this.handleProfile}
 				/>
 				<Route exact path='/'>
           			<Landing user={user} destinations={this.state.destinations}/>
@@ -116,7 +121,7 @@ class App extends Component {
 					/>
 				</Route>
 				<Route exact path='/destinations'>
-					<Destinations user={user} profileDestinations={this.state.profileDestinations} />
+					<Destinations profile={this.state.profile} profileDestinations={this.state.profileDestinations} />
 				</Route>
 				<Route exact path='/login'>
 					<Login 

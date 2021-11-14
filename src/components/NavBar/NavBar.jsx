@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import styles from './NavBar.module.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-const NavBar = ({ user, handleLogout, handleChange, handleSubmit, searchTitle }) => {
+const NavBar = ({ user, handleLogout, handleChange, handleSubmit, searchTitle, handleProfile }) => {
 	return (
 		<>
 			{user ? (
@@ -16,7 +16,7 @@ const NavBar = ({ user, handleLogout, handleChange, handleSubmit, searchTitle })
 							<Link className={styles.navElement} style={{fontSize: "50px"}} to="/">TRAVUTAN</Link>
 						</div>
 						<li><Link className={styles.navElement} to="/users">Users</Link></li>
-						<li><Link className={styles.navElement} to='/destinations'> My Destinations</Link></li>
+						<li><Link onClick={handleProfile} className={styles.navElement} to='/destinations'> My Destinations</Link></li>
 						<li><Link className={styles.navElement} to='' onClick={handleLogout}>Log Out</Link></li>
 						<form onSubmit={handleSubmit} className="d-flex">
 							<input onChange={handleChange} className="form-control me-2" type="search" placeholder="Search" aria-label="Search" value={searchTitle} />
