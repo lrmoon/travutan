@@ -10,8 +10,9 @@
   font-size: 50px;
 }
 
-span {
+.mySpan {
   font-size: 70px;
+  color: #E02401;
 }
 
 .headerH4 {

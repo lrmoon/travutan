@@ -11,7 +11,7 @@ const NavBar = ({ user, handleLogout, handleChange, handleSubmit, searchTitle })
 					<div className="container-fluid">
 						<div>
 							<span>
-								<img src='/images/travutan_icon.png' alt="icon" style={{height:"100px", width: "100px", margin: "0px"}}></img>
+								<img src='/images/travutan_icon.png' alt="icon" style={{height:"1000px", width: "100px", margin: "0px"}}></img>
 							</span>
 							<Link className={styles.navElement} style={{fontSize: "50px", margin: "0px"}} to="/">TRAVUTAN</Link>
 						</div>
