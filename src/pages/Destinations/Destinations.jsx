@@ -20,13 +20,11 @@ class Destinations extends Component{
   handleDelete = async e => {
     console.log('delete', e.target.value)
 
-    const profile = await backEndService.deleteDestination(e.target.value)
-
-    console.log('front end profile', profile)
-    // set state again of the response the backend gives you which is the profile
-    this.setState({
-      profile
-    })
+    backEndService.deleteDestination(e.target.value)
+    .then(deletedDestination => this.setState({
+      profileCollection: this.state.profileCollection.filter(collection => 
+        collection._id !== deletedDestination._id)
+    }))
 
   }
 
@@ -36,6 +34,7 @@ class Destinations extends Component{
 
   render(){
     const {profileCollection} = this.state;
+    console.log(profileCollection)
     return (
       <main className={styles.container}>
         <h1>

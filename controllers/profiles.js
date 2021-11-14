@@ -11,16 +11,16 @@ function show(req, res) {
 
 function deleteDestination(req, res){
   
-  // Destination.findByIdAndDelete(req.params.id)
-  // .then(deleteDestination => {
-  //   Profile.findById(req.user.profile)
-  //   .then(userProfile => {
-  //     userProfile.destinations.remove(deleteDestination)
-  //     userProfile.save()
-  //     res.json(userProfile.destinations)
-  //   })
-  // })
-  // .catch(err => console.log(err))
+  Destination.findByIdAndDelete(req.params.id)
+  .then(deletedDestination => {
+    Profile.findById(req.user.profile)
+    .then(userProfile => {
+      userProfile.destinations.remove(deletedDestination)
+      userProfile.save()
+    })
+    .then(() => res.json(deletedDestination))
+  })
+  .catch(err => console.log(err))
 
 }
 
