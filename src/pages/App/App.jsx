@@ -35,8 +35,7 @@ class App extends Component {
 		// destinations will be an array of destinations collection, 
 		destinations: [],
 		// profileDest will be an array of destinations in profile destinations array,
-		profile: {},
-		profileDestinations: []
+		profile: {}
 	}
 
 	async componentDidMount(){
@@ -119,7 +118,7 @@ class App extends Component {
 					/>
 				</Route>
 				<Route exact path='/destinations'>
-					<Destinations profile={this.state.profile} profileDestinations={this.state.profileDestinations} />
+					<Destinations profile={this.state.profile}/>
 				</Route>
 				<Route exact path='/login'>
 					<Login 

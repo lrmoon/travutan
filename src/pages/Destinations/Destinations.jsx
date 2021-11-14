@@ -1,6 +1,7 @@
 import styles from './Destinations.module.css'
 
 const Destinations = ({profile, profileDestinations}) => {
+  console.log(profile)
   return (
     <main className={styles.container}>
       <h1>
