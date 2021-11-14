@@ -5,35 +5,52 @@ import * as backEndService from './../../services/backendService'
 class Destinations extends Component{
 
   state = {
-    profile: {}
+    profileCollection: [],
   }
 
   async componentDidMount(){
-      const profile = await backEndService.getProfile();
-      
+      const profileCollection = await backEndService.getProfileDestinations();
+
       this.setState({
-        profile
+        profileCollection
       })
+
+  }
+
+  handleDelete = async e => {
+    console.log('delete', e.target.value)
+
+    backEndService.deleteDestination(e.target.value)
+    .then(deletedDestination => this.setState({
+      profileCollection: this.state.profileCollection.filter(collection => 
+        collection._id !== deletedDestination._id)
+    }))
+
+  }
+
+  handleEdit = e => {
+    console.log('edit', e.target.value)
   }
 
   render(){
-    const {name, destinations} = this.state.profile;
-    console.log(name, destinations)
+    const {profileCollection} = this.state;
+    console.log(profileCollection)
     return (
       <main className={styles.container}>
         <h1>
-          {name}
+          Profile Collection
         </h1>
     
-        
         <div className={styles.flexContainer}>
           {
-            destinations ?
+            profileCollection ?
 
-            destinations.map((profileDestination, idx) => (
+            profileCollection.map((profileDestination, idx) => (
               <div className={styles.destinationCard} key={idx}>
                 <h4>{profileDestination.title}</h4>
                 <img width="90%" height='70%' src={profileDestination.image} alt='soon'/>
+                <button value={profileDestination._id} onClick={this.handleEdit}>Edit</button>
+                <button value={profileDestination._id} onClick={this.handleDelete}>Delete</button>
               </div>
             ))
             :

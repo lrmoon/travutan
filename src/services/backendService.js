@@ -21,20 +21,26 @@ export function create(destination){
 }
 //get all destinations
 export function getAll(){
-    console.log('get all')
-    console.log('please')
     return fetch(BASE_URL)
     .then(res => res.json())
 }
 //------------ for profile destinations
-export function getProfile(){
-    return fetch(
-        PROFILE_URL,
-        {
-          headers: { Authorization: "Bearer " + tokenService.getToken() },
-        },
-        { mode: "cors" }
-      ).then((res) => res.json())
-      
+export function getProfileDestinations(){
+  return fetch(
+      PROFILE_URL,
+      {
+        headers: { Authorization: "Bearer " + tokenService.getToken() },
+      },
+      { mode: "cors" }
+    ).then((res) => res.json())
+}
+
+
+export function deleteDestination(id){
+  return fetch(`${PROFILE_URL}/${id}`, {
+        
+    method: 'DELETE',
+    headers: {Authorization: "Bearer " + tokenService.getToken()},
     }
-  
+    ).then(res => res.json())
+}
