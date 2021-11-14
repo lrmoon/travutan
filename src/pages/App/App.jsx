@@ -90,8 +90,7 @@ class App extends Component {
 		this.props.history.push('/search')
 	}
 
-	handleProfile = (e) => {
-		e.preventDefault()
+	handleProfile = () => {
 		backEndService.getProfile();
 	}
 
@@ -105,6 +104,7 @@ class App extends Component {
 					handleChange={this.handleChange}
 					handleSubmit={this.handleSubmit} 
 					searchTitle={this.state.searchTitle}
+					handleProfile={this.handleProfile}
 				/>
 				<Route exact path='/'>
           			<Landing user={user} destinations={this.state.destinations}/>
