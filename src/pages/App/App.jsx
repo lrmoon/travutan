@@ -95,6 +95,7 @@ class App extends Component {
 		const profile = await backEndService.getProfile();
 		
 		this.setState({
+			//profile from backend
 			profile
 		})
 	}
