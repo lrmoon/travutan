@@ -13,7 +13,7 @@ const NavBar = ({ user, handleLogout, handleChange, handleSubmit, searchTitle })
 							<span>
 								<img src='/images/travutan_icon.png' alt="icon" style={{height:"100px", width: "100px", margin: "0px"}}></img>
 							</span>
-							<Link className={styles.navElement} style={{fontSize: "50px", margin: "0px"}} to="/">TRAVUTAN</Link>
+							<Link className={styles.navElement} style={{fontSize: "50px"}} to="/">TRAVUTAN</Link>
 						</div>
 						<li><Link className={styles.navElement} to="/users">Users</Link></li>
 						<li><Link className={styles.navElement} to='/destinations'> My Destinations</Link></li>
