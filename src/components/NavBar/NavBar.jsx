@@ -9,7 +9,7 @@ const NavBar = ({ user, handleLogout, handleChange, handleSubmit, searchTitle })
 			{user ? (
 				<nav className="navbar navbar-expand-lg navbar-white bg-white">
 					<div className="container-fluid">
-						<div className={styles.travutan}>
+						<div>
 							<span>
 								<img src='/images/travutan_icon.png' alt="icon" style={{height:"100px", width: "100px", margin: "0px"}}></img>
 							</span>
