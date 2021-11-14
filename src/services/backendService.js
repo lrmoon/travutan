@@ -20,6 +20,7 @@ export function create(destination){
 //get all destinations
 export function getAll(){
     console.log('get all')
+    console.log('please')
     return fetch(BASE_URL)
     .then(res => res.json())
 }
