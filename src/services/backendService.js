@@ -28,13 +28,25 @@ export function getAll(){
 }
 //------------ for profile destinations
 export function getProfile(){
-    return fetch(
-        PROFILE_URL,
-        {
-          headers: { Authorization: "Bearer " + tokenService.getToken() },
-        },
-        { mode: "cors" }
-      ).then((res) => res.json())
-      
-    }
-  
+  return fetch(
+      PROFILE_URL,
+      {
+        headers: { Authorization: "Bearer " + tokenService.getToken() },
+      },
+      { mode: "cors" }
+    ).then((res) => res.json())
+}
+
+export function deleteDestination(id){
+  return fetch(`${PROFILE_URL}/${id}`, {
+        
+    method: 'DELETE',
+    headers: {
+      Authorization: "Bearer " + tokenService.getToken(),
+      "Content-type": 'application/json'
+    },
+    body: JSON.stringify(id)
+    },
+    {mode: "cors"}
+    ).then(res => res.json())
+}
