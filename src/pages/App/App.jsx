@@ -35,6 +35,7 @@ class App extends Component {
 		// destinations will be an array of destinations collection, 
 		destinations: [],
 		// profileDest will be an array of destinations in profile destinations array,
+		profile: {},
 		profileDestinations: []
 	}
 
@@ -90,8 +91,12 @@ class App extends Component {
 		this.props.history.push('/search')
 	}
 
-	handleProfile = () => {
-		backEndService.getProfile();
+	handleProfile = async () => {
+		const profile = await backEndService.getProfile();
+		
+		this.setState({
+			profile
+		}, () => {console.log(this.state.profile)})
 	}
 
 	render() {
