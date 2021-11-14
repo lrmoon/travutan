@@ -12,6 +12,7 @@ li{
 .navElement{
     color: orange;
     text-decoration: none;
+    padding-top: 10px;
   }
   .navElement:hover{
     color:orange;
@@ -22,6 +23,11 @@ li{
     text-decoration: none;
   }
 
+  .travutan {
+    margin-top: 10px;
+    padding-top: 10px;
+    display: inline;
+  }
  
   
 
