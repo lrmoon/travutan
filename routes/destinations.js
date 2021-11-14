@@ -1,11 +1,13 @@
 import { Router } from 'express'
 import * as destinationsCtrl from './../controllers/destinations.js'
+import { decodeUserFromToken, checkAuth } from '../middleware/auth.js'
 
 const router = Router()
+router.use(decodeUserFromToken)
 
 router.get('/', destinationsCtrl.index)
-router.post('/', destinationsCtrl.create)
-router.delete('/:id', destinationsCtrl.delete)
+router.post('/', checkAuth, destinationsCtrl.create)
+router.delete('/:id', checkAuth, destinationsCtrl.delete)
 
 export {
   router

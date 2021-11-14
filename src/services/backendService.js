@@ -9,8 +9,10 @@ export function create(destination){
     return fetch(BASE_URL, {
         
         method: 'POST',
-        headers: {'content-type': 'application/json',
-                    Authorization : "Bearer" + tokenService.getToken()},
+        headers: {
+          Authorization: "Bearer " + tokenService.getToken(),
+          "Content-type": 'application/json'
+        },
         body: JSON.stringify(destination)
         },
         {mode: "cors"}
