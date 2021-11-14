@@ -5,22 +5,22 @@ function show(req, res) {
 
     Profile.findById(req.user.profile)
     .populate('destinations')
-    .then(profileRes => res.json(profileRes))
+    .then(profileRes => res.json(profileRes.destinations))
 
 }
 
 function deleteDestination(req, res){
-  console.log(req.params.id)
-  Destination.findByIdAndDelete(req.params.id)
-  .then(deleteDestination => {
-    Profile.findById(req.user.profile)
-    .then(userProfile => {
-      userProfile.destinations.remove(deleteDestination)
-      userProfile.save()
-    })
-    .then(() => res.json(deleteDestination))
-  })
-  .catch(err => console.log(err))
+  
+  // Destination.findByIdAndDelete(req.params.id)
+  // .then(deleteDestination => {
+  //   Profile.findById(req.user.profile)
+  //   .then(userProfile => {
+  //     userProfile.destinations.remove(deleteDestination)
+  //     userProfile.save()
+  //     res.json(userProfile.destinations)
+  //   })
+  // })
+  // .catch(err => console.log(err))
 
 }
 

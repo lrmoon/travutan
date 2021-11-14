@@ -5,15 +5,16 @@ import * as backEndService from './../../services/backendService'
 class Destinations extends Component{
 
   state = {
-    profile: {}
+    profileCollection: [],
   }
 
   async componentDidMount(){
-      const profile = await backEndService.getProfile();
-      
+      const profileCollection = await backEndService.getProfileDestinations();
+
       this.setState({
-        profile
+        profileCollection
       })
+
   }
 
   handleDelete = async e => {
@@ -21,10 +22,12 @@ class Destinations extends Component{
 
     const profile = await backEndService.deleteDestination(e.target.value)
 
+    console.log('front end profile', profile)
     // set state again of the response the backend gives you which is the profile
     this.setState({
       profile
     })
+
   }
 
   handleEdit = e => {
@@ -32,19 +35,18 @@ class Destinations extends Component{
   }
 
   render(){
-    const {name, destinations} = this.state.profile;
+    const {profileCollection} = this.state;
     return (
       <main className={styles.container}>
         <h1>
-          {name}
+          Profile Collection
         </h1>
     
-        
         <div className={styles.flexContainer}>
           {
-            destinations ?
+            profileCollection ?
 
-            destinations.map((profileDestination, idx) => (
+            profileCollection.map((profileDestination, idx) => (
               <div className={styles.destinationCard} key={idx}>
                 <h4>{profileDestination.title}</h4>
                 <img width="90%" height='70%' src={profileDestination.image} alt='soon'/>

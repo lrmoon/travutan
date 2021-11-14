@@ -25,7 +25,7 @@ export function getAll(){
     .then(res => res.json())
 }
 //------------ for profile destinations
-export function getProfile(){
+export function getProfileDestinations(){
   return fetch(
       PROFILE_URL,
       {
@@ -34,6 +34,7 @@ export function getProfile(){
       { mode: "cors" }
     ).then((res) => res.json())
 }
+
 
 export function deleteDestination(id){
   return fetch(`${PROFILE_URL}/${id}`, {
