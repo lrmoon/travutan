@@ -10,8 +10,9 @@
   font-size: 50px;
 }
 
-span {
+.mySpan {
   font-size: 70px;
+  color: #E02401;
 }
 
 .headerH4 {
@@ -67,6 +68,6 @@ a:hover {
 
 .destinationCard img:hover {
   box-shadow: 1px 2px 18px rgb(0, 0, 0);
-  transform: skewY(1deg);
+  transform: skewY(3deg);
   cursor: pointer;
 }

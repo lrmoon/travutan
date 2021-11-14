@@ -12,6 +12,7 @@ li{
 .navElement{
     color: orange;
     text-decoration: none;
+    padding-top: 10px;
   }
   .navElement:hover{
     color:orange;
@@ -21,7 +22,7 @@ li{
   .removeLine li {
     text-decoration: none;
   }
-
+ 
   
 
  
