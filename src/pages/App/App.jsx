@@ -42,8 +42,6 @@ class App extends Component {
 	async componentDidMount(){
 		const allDestinations =  await backEndService.getAll()
 
-		console.log('alldestinations', allDestinations);
-
 		this.setState({
 			destinations: allDestinations
 		}, () => {console.log("state destinations", this.state.destinations);})
