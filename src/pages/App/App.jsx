@@ -1,6 +1,6 @@
 // React / React Router imports
 import React, { Component } from 'react'
-import { Route, Redirect, useHistory} from 'react-router-dom'
+import { Route, Redirect} from 'react-router-dom'
 
 // Components imports
 import NavBar from '../../components/NavBar/NavBar'
@@ -12,6 +12,7 @@ import Landing from '../Landing/Landing'
 import Users from '../Users/Users'
 import SearchList from '../SearchList/SearchList'
 import Destinations from '../Destinations/Destinations'
+import EditPage from '../EditPage/EditPage'
 
 import SearchShow from '../SearchShow/SearchShow'
 
@@ -86,6 +87,10 @@ class App extends Component {
 		this.props.history.push('/search')
 	}
 
+	handleRedirect = () => {
+		this.props.history.push('/destinations')
+	}
+
 	render() {
 		const {user} = this.state
 		return (
@@ -132,6 +137,11 @@ class App extends Component {
 				<Route exact path='/searchShow'
 					render={({location}) => 
 					<SearchShow user={user} location={location} handleAddDestination={this.handleAddDestination}/>
+				}/>
+
+				<Route exact path='/editPage'
+					render={({location}) => 
+					<EditPage location={location} handleRedirect={this.handleRedirect}/>
 				}/>
 
 			</>
