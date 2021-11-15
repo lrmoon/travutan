@@ -25,7 +25,9 @@ function deleteDestination(req, res){
 }
 
 function update(req, res){
-  console.log(req.params)
+
+  Destination.findByIdAndUpdate(req.params.id, req.body, {next: true})
+  .then(updatedDestination => res.json(updatedDestination))
 }
 
 export{

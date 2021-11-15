@@ -1,12 +1,11 @@
 import React, {Component} from 'react'
-
+import * as backEndService from './../../services/backendService'
 
 class EditPage extends Component{
 
     state = {
         destination: this.props.location.state.profileDestination,
-        form: {},
-        editTitle: 'a'
+        editTitle: this.props.location.state.profileDestination.title
     }
 
     handleChange = (e) => {
@@ -29,7 +28,10 @@ class EditPage extends Component{
             wikiUrl
         }
 
-        console.log(formBody);
+        backEndService.updateDestination(this.state.destination, formBody)
+
+        this.props.handleRedirect();
+
     }
 
 
@@ -40,8 +42,9 @@ class EditPage extends Component{
             <div className='formClass'>
                 <form onSubmit={this.handleEdit}>
                     <input type='text' name='title' value={editTitle} onChange={this.handleChange}/>
-                    <button type='submit'>Update</button>
+                    <button type='submit'>Update Title</button>
                 </form>
+                <img width="70%" height='70%' src={destination.image} alt='soon'/>
             </div>
         )        
     }

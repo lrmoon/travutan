@@ -5,7 +5,7 @@ const PROFILE_URL ='/api/profile'
 //------------ for destinations
 // post request to create a destination
 export function create(destination){
-    console.log('create fetch', destination);
+
     return fetch(BASE_URL, {
         
         method: 'POST',
@@ -45,12 +45,16 @@ export function deleteDestination(id){
     ).then(res => res.json())
 }
 
-export function updateDestination(destination){
-  return fetch(`${PROFILE_URL}/${destination._id}`, {
+export function updateDestination(originalDestination, editedDestination){
+  console.log(editedDestination)
+  return fetch(`${PROFILE_URL}/${originalDestination._id}`, {
         
     method: 'PUT',
-    headers: {Authorization: "Bearer " + tokenService.getToken()},
-    body: JSON.stringify(destination)
+    headers: {
+      Authorization: "Bearer " + tokenService.getToken(),
+      "Content-type": 'application/json'
+    },
+    body: JSON.stringify(editedDestination)
     },
     ).then(res => res.json())
 }
