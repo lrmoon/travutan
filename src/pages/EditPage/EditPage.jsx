@@ -27,6 +27,7 @@ class EditPage extends Component{
             population,
             wikiUrl
         }
+        console.log(formBody)
 
         backEndService.updateDestination(this.state.destination, formBody)
 
