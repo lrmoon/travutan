@@ -24,7 +24,12 @@ function deleteDestination(req, res){
 
 }
 
+function update(req, res){
+  console.log(req.params)
+}
+
 export{
     show,
-    deleteDestination as delete
+    deleteDestination as delete,
+    update
 }

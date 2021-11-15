@@ -44,3 +44,13 @@ export function deleteDestination(id){
     }
     ).then(res => res.json())
 }
+
+export function updateDestination(destination){
+  return fetch(`${PROFILE_URL}/${destination._id}`, {
+        
+    method: 'PUT',
+    headers: {Authorization: "Bearer " + tokenService.getToken()},
+    body: JSON.stringify(destination)
+    },
+    ).then(res => res.json())
+}
