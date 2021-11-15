@@ -15,5 +15,6 @@ router.use(decodeUserFromToken)
 
 router.get('/', checkAuth, profileCtrl.show);
 router.delete('/:id', checkAuth, profileCtrl.delete)
+router.put('/:id', checkAuth, profileCtrl.update)
 
 export { router }

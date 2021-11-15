@@ -24,7 +24,14 @@ function deleteDestination(req, res){
 
 }
 
+function update(req, res){
+
+  Destination.findByIdAndUpdate(req.params.id, req.body, {next: true})
+  .then(updatedDestination => res.json(updatedDestination))
+}
+
 export{
     show,
-    deleteDestination as delete
+    deleteDestination as delete,
+    update
 }

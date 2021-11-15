@@ -24,13 +24,7 @@ function index(req, res){
     res.json(err)
     })
 }
-
-function deleteDestination(req, res){
-    console.log()
-}
-
 export {
     create,
-    deleteDestination as delete,
     index
 }
