@@ -52,7 +52,7 @@ class App extends Component {
 		this.setState({
 			destinations: [...this.state.destinations, newDestination]
 		}, () => {
-			console.log(this.state.destinations)	
+			console.log( this.state.destinations)	
 		})
 		
 		this.props.history.push('/')
