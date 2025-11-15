@@ -35,8 +35,3 @@ A full-stack web application that centralizes travel information, helping users 
 - Timeline display for reviews and travel planning
 - Advanced filtering and recommendation algorithms
 
-
-
-AAU I want to see my profile with my reviews.
-
-AAU I want to be able to update a travel destination review.
